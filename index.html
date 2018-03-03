@@ -1,1 +1,2004 @@
 
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://www.ishah.tk//xmlrpc.php">
+
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+
+<link rel="icon" href="./favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+<title>Alfaz (The Words) &#8211; Connecting you to the transformative power of poetry</title>
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="The Poetry Society &raquo; Feed" href="http://poetrysociety.org.uk/feed/" />
+<link rel="alternate" type="application/rss+xml" title="The Poetry Society &raquo; Comments Feed" href="http://poetrysociety.org.uk/comments/feed/" />
+<link rel="alternate" type="text/calendar" title="The Poetry Society &raquo; iCal Feed" href="http://poetrysociety.org.uk/events/?ical=1" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"wpemoji":"http:\/\/poetrysociety.org.uk\/wp-includes\/js\/wp-emoji.js?ver=4.9.4","twemoji":"http:\/\/poetrysociety.org.uk\/wp-includes\/js\/twemoji.js?ver=4.9.4"}};
+			( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	/*
+	 * Create a canvas element for testing native browser support
+	 * of emoji.
+	 */
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Check if two sets of Emoji characters render the same.
+	 *
+	 * @param set1 array Set of Emoji characters.
+	 * @param set2 array Set of Emoji characters.
+	 * @returns {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( set1, set2 ) {
+		var stringFromCharCode = String.fromCharCode;
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set1 ), 0, 0 );
+		var rendered1 = canvas.toDataURL();
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set2 ), 0, 0 );
+		var rendered2 = canvas.toDataURL();
+
+		return rendered1 === rendered2;
+	}
+
+	/**
+	 * Detect if the browser supports rendering emoji or flag emoji. Flag emoji are a single glyph
+	 * made of two characters, so some browsers (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param type {String} Whether to test for support of "flag" or "emoji".
+	 * @return {Boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var isIdentical;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 55356, 56826, 55356, 56819 ],
+					[ 55356, 56826, 8203, 55356, 56819 ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather an five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447 ],
+					[ 55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447 ]
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * Emoji allows people of all gender levitate and so does WordPress.
+				 *
+				 * To test for support, try to render a new emoji (woman in business suit levitating),
+				 * then compare it to how it would look if the browser doesn't render it correctly
+				 * (person in business suit levitating + female sign).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[55357, 56692, 8205, 9792, 65039],
+					[55357, 56692, 8203, 9792, 65039]
+				);
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='tribe_events-widget-calendar-pro-style-css'  href='http://poetrysociety.org.uk/wp-content/plugins/events-calendar-pro/src/resources/css/widget-calendar-skeleton.css?ver=4.4.20.1' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe_events--widget-calendar-pro-override-style-css'  href='http://poetrysociety.org.uk/wp-content/plugins/events-calendar-pro/src/resources/css/widget-calendar-skeleton.css?ver=4.4.20.1' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-style-css'  href='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/js/bootstrap/css/bootstrap.min.css?ver=4.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='poetry-soc-style-css'  href='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/style.css?ver=4.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='boxer-style-css'  href='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/js/jquery.fs.boxer.css?ver=4.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css'  href='http://poetrysociety.org.uk/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=3.2.6' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='http://poetrysociety.org.uk/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=3.2.6' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='http://poetrysociety.org.uk/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=3.2.6' type='text/css' media='all' />
+<link rel='stylesheet' id='tribe-events-calendar-pro-style-css'  href='http://poetrysociety.org.uk/wp-content/plugins/events-calendar-pro/src/resources/css/tribe-events-pro-skeleton.css?ver=4.4.20.1' type='text/css' media='all' />
+<link rel='stylesheet' id='fetch-tweets-8a09d8cb10304d3d675eab4b342af646-css'  href='http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/template/plain/style.css?ver=4.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='fetch-tweets-2e9b4f60a08c2cbd5e75a87e9cab7867-css'  href='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/fetch-tweets/poetrysoc/style.css?ver=4.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='fetch-tweets-30d9c0dfb1ef24e6193d5d1bd1daf897-css'  href='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/fetch-tweets/poetrysoc2/style.css?ver=4.9.4' type='text/css' media='all' />
+<link rel='stylesheet' id='event-tickets-plus-tickets-css-css'  href='http://poetrysociety.org.uk/wp-content/plugins/event-tickets-plus/src/resources/css/tickets.css?ver=4.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wp_user_stylesheet_switcher_files0-css'  href='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/style.css?ver=4.9.4' type='text/css' media='all' />
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/js/tinysort.min.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/js/respond.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-includes/js/jquery/jquery-migrate.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/js/bootstrap/js/bootstrap.min.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/js/jquery.fs.boxer.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/js/jquery.matchHeight-min.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/js/jquery.ba-replacetext.min.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/js/page.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/plugins/wp-user-stylesheet-switcher/js/js.cookie.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/plugins/wp-user-stylesheet-switcher/js/use_cookie_when_ready.js?ver=4.9.4'></script>
+<link rel='https://api.w.org/' href='http://poetrysociety.org.uk/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://poetrysociety.org.uk/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://poetrysociety.org.uk/wp-includes/wlwmanifest.xml" /> 
+<link rel="canonical" href="http://poetrysociety.org.uk/" />
+<link rel='shortlink' href='http://poetrysociety.org.uk/' />
+<link rel="alternate" type="application/json+oembed" href="http://poetrysociety.org.uk/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fpoetrysociety.org.uk%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://poetrysociety.org.uk/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fpoetrysociety.org.uk%2F&#038;format=xml" />
+<meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="http://poetrysociety.org.uk"><link rel="https://theeventscalendar.com/" href="http://poetrysociety.org.uk/wp-json/tribe/events/v1/" />	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	
+		<style media="print" type="text/css">
+			div.faq_answer {display: block!important;}
+			p.faq_nav {display: none;}
+		</style>
+
+	<!-- WooCommerce Google Analytics Integration -->
+		<script type='text/javascript'>
+			var gaProperty = 'UA-17730073-5';
+			var disableStr = 'ga-disable-' + gaProperty;
+			if ( document.cookie.indexOf( disableStr + '=true' ) > -1 ) {
+				window[disableStr] = true;
+			}
+			function gaOptout() {
+				document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+				window[disableStr] = true;
+			}
+		</script>
+		<script type='text/javascript'>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga( 'create', 'UA-17730073-5', 'auto' );ga( 'set', 'anonymizeIp', true );
+		ga( 'set', 'dimension1', 'no' );
+ga( 'require', 'ec' );</script>
+		<!-- /WooCommerce Google Analytics Integration --><script src="//use.typekit.net/djk1qsk.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+<script>$=jQuery;</script>
+<script src="/wp-content/themes/poetry-soc/js/jquery.custom.remodal.js"></script>
+<link rel="stylesheet" href="/wp-content/themes/poetry-soc/js/jquery.custom.remodal.css">
+
+</head>
+
+<body class="home page-template-default page page-id-14 tribe-no-js group-blog">
+<div id="circles"></div>
+<div id="page" class="hfeed site remodal-bg">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<div class="container">
+	
+		<header id="masthead" class="site-header row" role="banner">
+			<div class="site-branding col-xs-12">
+				 
+				<h1 class="site-logo"><a href="http://poetrysociety.org.uk/" rel="home"><img src="http://poetrysociety.org.uk/wp-content/themes/poetry-soc/images/poetry-logo.gif" alt="The Poetry Society logo"></a></h1>
+				<h1 class="site-title"><a href="http://poetrysociety.org.uk/" alt="The Poetry Society"><img src="http://poetrysociety.org.uk/wp-content/themes/poetry-soc/images/poetry-wordmark.png" alt="The Poetry Society"></a></h1>
+				
+				<div class="clear"></div>
+				
+			</div><!-- .site-branding -->
+
+				
+			<nav id="site-navigation" class="main-navigation col-sm-12" role="navigation">
+				<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><img class="menu-icon" src="http://poetrysociety.org.uk/wp-content/uploads/2016/07/menu_icon.png" />&nbsp; Main Menu</button>
+				<div id="bs-example-navbar-collapse-1" class="navbar-static"><ul id="menu-main-nav" class="nav navbar-nav"><li id="menu-item-2680" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-14 current_page_item menu-item-2680 active"><a title="Home" href="http://poetrysociety.org.uk/">Home</a></li>
+<li id="menu-item-3177" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3177"><a title="Competitions" href="http://poetrysociety.org.uk/competitions/">Competitions</a></li>
+<li id="menu-item-118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-118 dropdown"><a title="Membership" href="http://poetrysociety.org.uk/membership/" data-toggle="dropdown" class="dropdown-toggle">Membership <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-19307" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19307"><a title="Join us" href="/membership/">Join us</a></li>
+	<li id="menu-item-29630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29630"><a title="Gift membership" href="http://poetrysociety.org.uk/membership/gift-membership/">Gift membership</a></li>
+	<li id="menu-item-19308" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19308"><a title="Member news" href="/membership/more-about-membership/">Member news</a></li>
+	<li id="menu-item-19309" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19309"><a title="Stanzas" href="/membership/poetry-society-stanzas/">Stanzas</a></li>
+	<li id="menu-item-19310" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19310"><a title="Members&#039; poems" href="/membership/members-poems-2/">Members&#8217; poems</a></li>
+</ul>
+</li>
+<li id="menu-item-5390" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5390 dropdown"><a title="Publications" href="http://poetrysociety.org.uk/publications-section/" data-toggle="dropdown" class="dropdown-toggle">Publications <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-5382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5382 dropdown"><a title="The Poetry Review" href="http://poetrysociety.org.uk/publications-section/the-poetry-review/">The Poetry Review</a></li>
+	<li id="menu-item-5383" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5383 dropdown"><a title="Poetry News" href="http://poetrysociety.org.uk/publications-section/poetry-news/">Poetry News</a></li>
+	<li id="menu-item-5381" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5381 dropdown"><a title="Poetry Society Books" href="http://poetrysociety.org.uk/poetry-society-books/">Poetry Society Books</a></li>
+</ul>
+</li>
+<li id="menu-item-1454" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1454"><a title="Projects" href="http://poetrysociety.org.uk/projects/">Projects</a></li>
+<li id="menu-item-119" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119"><a title="Young Poets" href="http://poetrysociety.org.uk/young-poets/">Young Poets</a></li>
+<li id="menu-item-2757" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2757"><a title="Education" href="http://poetrysociety.org.uk/education/">Education</a></li>
+<li id="menu-item-4155" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4155"><a title="The Poetry Café" href="http://poetrysociety.org.uk/poetry-cafe/">The Poetry Café</a></li>
+<li id="menu-item-4498" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4498"><a title="What&#039;s On" href="/events/">What&#8217;s On</a></li>
+</ul></div>			</nav><!-- #site-navigation -->
+		</header><!-- #masthead -->
+		<div id="breadcrumbs" class="row breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+			<div class="col-sm-6 col-lg-6 hidden-xs trail">
+		    <p class='strapline'><span class='quotation'>Connecting you to the transformative power of poetry <a class='btn' href='#introduction'>More...</a></p>			</div>
+			<div class="col-sm-7 col-lg-6 shoplink">
+				<span><a href="/category/news/"><span class="glyphicon glyphicon-certificate" aria-hidden="true"></span> News</a></span> 
+				
+				<span><a href="/poetry-society-information/about/"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About</a></span> 
+				<span><a href="/search/"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</a></span>
+				
+				<span><a href="/poetry-society-information/about/support-us/"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Donate</a></span>
+				<span><a href="/shop/"><span class="glyphicon glyphicon-gift" aria-hidden="true"></span> Shop</a></span>
+							</div>
+		</div>
+		<div id="content" class="site-content row">
+
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main" data-template="front-page-php">
+
+			<!-- testing rows and columns -->
+
+			<div class="container-fluid">
+				<div class="row row-1">
+					<div class="col-sm-8 match-group-1"> 
+								
+
+						<a href="http://poetrysociety.org.uk/publications/volume-107-no-4-winter-2017/">
+							<div class="wrapper">
+								<img width="800" height="533" src="http://poetrysociety.org.uk/wp-content/uploads/2017/10/winter-2017-featuredpromo-800x533.png" class="attachment-medium size-medium wp-post-image" alt="" srcset="http://poetrysociety.org.uk/wp-content/uploads/2017/10/winter-2017-featuredpromo-800x533.png 800w, http://poetrysociety.org.uk/wp-content/uploads/2017/10/winter-2017-featuredpromo-768x512.png 768w, http://poetrysociety.org.uk/wp-content/uploads/2017/10/winter-2017-featuredpromo.png 1200w, http://poetrysociety.org.uk/wp-content/uploads/2017/10/winter-2017-featuredpromo-180x120.png 180w, http://poetrysociety.org.uk/wp-content/uploads/2017/10/winter-2017-featuredpromo-300x200.png 300w, http://poetrysociety.org.uk/wp-content/uploads/2017/10/winter-2017-featuredpromo-600x400.png 600w" sizes="(max-width: 800px) 100vw, 800px" />								<span class="absolute-title"><span class="title"> The Poetry Review, Winter 2017 </span>
+									
+									<br /><span class="subtitle">Available now, featuring new work by Hisham Bustani, Melissa Lee-Houghton, Kayo Chingonyi, and more...</span>
+																</span>
+							</div>
+						</a>
+						
+					</div>
+					<div class="col-sm-4 events-box match-group-1" role="tabpanel">
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#tab-news" aria-controls="news" role="tab" data-toggle="tab">News</a></li>
+							<li role="presentation"><a href="#tab-events" aria-controls="events" role="tab" data-toggle="tab">Events</a></li>
+							<li role="presentation"><a href="#tab-workshops" aria-controls="workshops" role="tab" data-toggle="tab">Workshops</a></li>
+						</ul>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="tab-news">
+							 
+								 							
+							
+								<div class='news-list'>
+														
+																
+									<div class="news-list-item" data-tag="featured " data-count="2" data-total="1">
+										<a href="http://poetrysociety.org.uk/news/young-poets-network-and-people-need-nature-inspire-winning-poems-on-nature-for-the-second-year-running/">
+											<h2 class="entry-title foo">Young Poets Network and People Need Nature inspire winning poems on nature for the second year running</h2>
+											<p>The Poetry Society’s platform for young poetry-lovers, Young Poets Network,&hellip;</p>
+										</a>
+									</div>
+								
+																
+									<div class="news-list-item" data-tag="featured " data-count="2" data-total="1">
+										<a href="http://poetrysociety.org.uk/news/new-war-poetry-competition-launched-by-prince-william/">
+											<h2 class="entry-title foo">New war poetry competition launched by Prince William</h2>
+											<p>The Poetry Society is supporting a war poetry competition launched&hellip;</p>
+										</a>
+									</div>
+								
+																	
+																
+									<div class="news-list-item" data-tag="members " data-count="1" data-total="1">
+										<a href="http://poetrysociety.org.uk/news/inksweattears/">
+											<h2 class="entry-title foo">Gail McConnell and Jo Young win Ink Sweat &#038; Tears/Cafe Writers Pamphlet Competition</h2>
+											<p>Poetry Society Member Gail McConnell is joint winner of Ink&hellip;</p>
+										</a>
+									</div>
+											
+									<p><a href='/category/news/' rel='bookmark'>View more...</a></p>							
+								</div>
+
+							</div> <!-- #tab-news -->
+
+							<div role="tabpanel" class="tab-pane" id="tab-events">
+								<aside id="tribe-events-adv-list-widget-4" class="widget-even widget-4 widget tribe-events-adv-list-widget"><h1 class="widget-title">Home page</h1><div class='events-wrap'>
+		<!-- Event  -->
+		<div class="type-tribe_events post-42987 tribe-clearfix tribe-events-category-the-poetry-society tribe-events-venue-27441">
+			
+<div class="tribe-mini-calendar-event event--1 ">
+	
+	<div class="list-date">
+					<span class="list-dayname">
+				Mon			</span>
+		
+		<span class="list-daynumber">05</span>
+		</div>
+
+		<div class="list-info">
+						<h2 class="tribe-events-title">
+					<a href="http://poetrysociety.org.uk/event/anecdotal-evidence-an-evening-with-wendy-cope/" rel="bookmark">Anecdotal Evidence: an evening with Wendy Cope</a>
+			</h2>
+			
+			
+			<div class="tribe-events-duration">
+				<span class="tribe-event-date-start">Monday 5 March 2018, 7:00 pm</span> – <span class="tribe-event-time">9:30 pm</span>			</div>
+
+			
+			<!-- // Price, Venue Name, Address, City, State or Province, Postal Code, Country, Venue Phone, Organizer Name-->
+			
+					</div>
+	</div> <!-- .list-info -->
+		</div><!-- .hentry .vevent -->
+
+			
+		<!-- Event  -->
+		<div class="type-tribe_events post-43149 tribe-clearfix tribe-events-category-the-poetry-cafe tribe-events-category-the-poetry-society tribe-events-venue-5116 tribe-events-organizer-4466">
+			
+<div class="tribe-mini-calendar-event event--1 ">
+	
+	<div class="list-date">
+					<span class="list-dayname">
+				Fri			</span>
+		
+		<span class="list-daynumber">16</span>
+		</div>
+
+		<div class="list-info">
+						<h2 class="tribe-events-title">
+					<a href="http://poetrysociety.org.uk/event/in-town-tonight-kaveh-akbar/" rel="bookmark">In Town Tonight: Kaveh Akbar, Rachel Long &#038; Holly Singlehurst</a>
+			</h2>
+			
+			
+			<div class="tribe-events-duration">
+				<span class="tribe-event-date-start">Friday 16 March 2018, 7:00 pm</span> – <span class="tribe-event-time">9:00 pm</span>			</div>
+
+			
+			<!-- // Price, Venue Name, Address, City, State or Province, Postal Code, Country, Venue Phone, Organizer Name-->
+			
+					</div>
+	</div> <!-- .list-info -->
+		</div><!-- .hentry .vevent -->
+
+			
+		<!-- Event  -->
+		<div class="type-tribe_events post-43125 tribe-clearfix tribe-events-category-the-poetry-cafe tribe-events-category-the-poetry-society tribe-events-venue-35523 tribe-events-organizer-4466">
+			
+<div class="tribe-mini-calendar-event event--1 ">
+	
+	<div class="list-date">
+					<span class="list-dayname">
+				Apr			</span>
+		
+		<span class="list-daynumber">05</span>
+		</div>
+
+		<div class="list-info">
+						<h2 class="tribe-events-title">
+					<a href="http://poetrysociety.org.uk/event/poetry-3-2/2018-04-05/" rel="bookmark">Poetry @ 3</a>
+			</h2>
+			
+			
+			<div class="tribe-events-duration">
+				<span class="tribe-event-date-start">Thursday 5 April 2018, 3:00 pm</span> – <span class="tribe-event-time">5:00 pm</span>			</div>
+
+			
+			<!-- // Price, Venue Name, Address, City, State or Province, Postal Code, Country, Venue Phone, Organizer Name-->
+			
+					</div>
+	</div> <!-- .list-info -->
+		</div><!-- .hentry .vevent -->
+
+				
+	<p class="tribe-events-widget-link">
+		<a href="http://poetrysociety.org.uk/events/" rel="bookmark" data-v="pro">
+			View More&hellip;		</a>
+	</p>
+	</div>
+</aside><script type="application/ld+json">
+[{"@context":"http://schema.org","@type":"Event","name":"Anecdotal Evidence: an evening with Wendy Cope","description":"&lt;p&gt;Hear Wendy Cope read poems from&nbsp;Anecdotal Evidence, her first collection of new poetry since 2011\u2019s acclaimed&nbsp;Family Values, at this special Faber Members event, in association with The Poetry Society. In this new collection, Wendy&nbsp;Cope celebrates \u2018the half-forgotten stories of our lives\u2019 with compassion, wisdom and wit. She continues to be the most generous of authors, [&hellip;]&lt;/p&gt;\\n","image":"http://poetrysociety.org.uk/wp-content/uploads/2018/02/rsz_cope_wendy_1-200x200.jpg","url":"http://poetrysociety.org.uk/event/anecdotal-evidence-an-evening-with-wendy-cope/","startDate":"2018-03-05T19:00:00+00:00","endDate":"2018-03-05T21:30:00+00:00","location":{"@type":"Place","name":"Bloomsbury House","description":"","url":"http://poetrysociety.org.uk/venue/bloomsbury-house/","address":{"@type":"PostalAddress","streetAddress":"74-77 Great Russell Street","addressLocality":"London","addressRegion":"London","postalCode":"WC1B 3DA","addressCountry":"United Kingdom"},"telephone":"","sameAs":""}},{"@context":"http://schema.org","@type":"Event","name":"In Town Tonight: Kaveh Akbar, Rachel Long &#038; Holly Singlehurst","description":"&lt;p&gt;Kaveh Akbar. photo: B A Van Sise In Town Tonight - The Poetry Society\\'s open invitation to visiting overseas poets to read at our venue in the heart of London, The Poetry Caf\u00e9.&nbsp; We are very proud to present a headline reading from Iranian-American poet and scholar Kaveh Akbar,&nbsp;in his very first European visit.&nbsp;&nbsp;Last year, [&hellip;]&lt;/p&gt;\\n","image":"http://poetrysociety.org.uk/wp-content/uploads/2018/02/Akbar-Kaveh-B-A-Van-Sise.jpg","url":"http://poetrysociety.org.uk/event/in-town-tonight-kaveh-akbar/","offers":[{"@type":"Offer","url":"http://poetrysociety.org.uk/event/in-town-tonight-kaveh-akbar/","price":"8","category":"primary","availability":"InStock","validFrom":"2018-02-07T00:00:00+0000","validThrough":"2018-03-16T00:00:00+0000"},{"@type":"Offer","url":"http://poetrysociety.org.uk/event/in-town-tonight-kaveh-akbar/","price":"6","category":"primary","availability":"InStock","validFrom":"2018-02-07T00:00:00+0000"}],"startDate":"2018-03-16T19:00:00+00:00","endDate":"2018-03-16T21:00:00+00:00","location":{"@type":"Place","name":"The Poetry Caf\u00e9","description":"","url":"http://poetrysociety.org.uk/venue/poetry-cafe/","address":{"@type":"PostalAddress","streetAddress":"22 Betterton Street","addressLocality":"London","postalCode":"WC2H 9BX","addressCountry":"United Kingdom"},"telephone":"","sameAs":""},"organizer":{"@type":"Person","name":"The Poetry Society","description":"","url":"http://poetrysociety.org.uk/organizer/the-poetry-society/","telephone":"","email":"","sameAs":""}},{"@context":"http://schema.org","@type":"Event","name":"Poetry @ 3","description":"&lt;p&gt;Poetry @ 3 is first Thursday of each month - an open mic for poets who like to come out and play during the day. Hosted by the Poetry Society\u2019s Paul McGrane. No booking required, just turn up. Sign up between 2.30 and 3 to read. FREE. &nbsp; &nbsp;&lt;/p&gt;\\n","image":"http://poetrysociety.org.uk/wp-content/uploads/2017/06/Poetry-at-3-feature-300x300.jpg","url":"http://poetrysociety.org.uk/event/poetry-3-2/2018-04-05/","startDate":"2018-04-05T15:00:00+00:00","endDate":"2018-04-05T17:00:00+00:00","location":{"@type":"Place","name":"THE POETRY CAFE","description":"","url":"http://poetrysociety.org.uk/venue/the-poetry-cafe/","address":{"@type":"PostalAddress"},"telephone":"","sameAs":""},"organizer":{"@type":"Person","name":"The Poetry Society","description":"","url":"http://poetrysociety.org.uk/organizer/the-poetry-society/","telephone":"","email":"","sameAs":""}}]
+</script>							</div> <!-- #tab-events -->
+
+							<div role="tabpanel" class="tab-pane" id="tab-workshops">
+								<aside id="tribe-events-adv-list-widget-15" class="widget-even widget-last widget-2 widget tribe-events-adv-list-widget"><div class='events-wrap'>
+		<!-- Event  -->
+		<div class="type-tribe_events post-43230 tribe-clearfix tribe-events-category-poetry-surgery tribe-events-category-workshops tribe-events-venue-22637 tribe-events-organizer-4466">
+			
+<div class="tribe-mini-calendar-event event--1 ">
+	
+	<div class="list-date">
+					<span class="list-dayname">
+				Sat			</span>
+		
+		<span class="list-daynumber">03</span>
+		</div>
+
+		<div class="list-info">
+						<h2 class="tribe-events-title">
+					<a href="http://poetrysociety.org.uk/event/1-1-feedback-on-your-poems-alison-chisholm-southport/" rel="bookmark">1-1 feedback on your poems, Alison Chisholm, Southport</a>
+			</h2>
+			
+			
+			<div class="tribe-events-duration">
+				<span class="tribe-event-date-start">Saturday 3 March 2018, 10:00 am</span> – <span class="tribe-event-time">1:00 pm</span>			</div>
+
+			
+			<!-- // Price, Venue Name, Address, City, State or Province, Postal Code, Country, Venue Phone, Organizer Name-->
+			
+					</div>
+	</div> <!-- .list-info -->
+		</div><!-- .hentry .vevent -->
+
+			
+		<!-- Event  -->
+		<div class="type-tribe_events post-42956 tribe-clearfix tribe-events-category-poetry-surgery tribe-events-category-workshops tribe-events-venue-16158 tribe-events-organizer-4466">
+			
+<div class="tribe-mini-calendar-event event--1 ">
+	
+	<div class="list-date">
+					<span class="list-dayname">
+				Sat			</span>
+		
+		<span class="list-daynumber">17</span>
+		</div>
+
+		<div class="list-info">
+						<h2 class="tribe-events-title">
+					<a href="http://poetrysociety.org.uk/event/heidimarch/" rel="bookmark">1-1 feedback on your poems, Heidi Williamson &#8211; Skype</a>
+			</h2>
+			
+			
+			<div class="tribe-events-duration">
+				<span class="tribe-event-date-start">Saturday 17 March 2018, 10:00 am</span> – <span class="tribe-event-time">5:30 pm</span>			</div>
+
+			
+			<!-- // Price, Venue Name, Address, City, State or Province, Postal Code, Country, Venue Phone, Organizer Name-->
+			
+					</div>
+	</div> <!-- .list-info -->
+		</div><!-- .hentry .vevent -->
+
+			
+		<!-- Event  -->
+		<div class="type-tribe_events post-43856 tribe-clearfix tribe-events-category-the-poetry-society tribe-events-category-workshops tribe-events-venue-43857">
+			
+<div class="tribe-mini-calendar-event event--1 ">
+	
+	<div class="list-date">
+					<span class="list-dayname">
+				Sat			</span>
+		
+		<span class="list-daynumber">24</span>
+		</div>
+
+		<div class="list-info">
+						<h2 class="tribe-events-title">
+					<a href="http://poetrysociety.org.uk/event/a-poem-to-remember-free-workshop-portsmouth/" rel="bookmark">A Poem to Remember Free Workshop: Portsmouth</a>
+			</h2>
+			
+			
+			<div class="tribe-events-duration">
+				<span class="tribe-event-date-start">Saturday 24 March 2018, 10:30 am</span> – <span class="tribe-event-time">1:30 pm</span>			</div>
+
+			
+			<!-- // Price, Venue Name, Address, City, State or Province, Postal Code, Country, Venue Phone, Organizer Name-->
+			
+					</div>
+	</div> <!-- .list-info -->
+		</div><!-- .hentry .vevent -->
+
+				
+	<p class="tribe-events-widget-link">
+		<a href="http://poetrysociety.org.uk/events/" rel="bookmark" data-v="pro">
+			View More&hellip;		</a>
+	</p>
+	</div>
+</aside><script type="application/ld+json">
+[{"@context":"http://schema.org","@type":"Event","name":"1-1 feedback on your poems, Alison Chisholm, Southport","description":"&lt;p&gt;This is a wonderful opportunity to discuss your poetry on a one-to-one basis with poet and tutor Alison Chisholm, a relaxed but in-depth analysis of your poems. Identify strategies for further developing your writing, discuss problems you may be experiencing and look at strategies for taking your work forward. There will be plenty of time [&hellip;]&lt;/p&gt;\\n","image":"http://poetrysociety.org.uk/wp-content/uploads/2016/06/Alison.jpg","url":"http://poetrysociety.org.uk/event/1-1-feedback-on-your-poems-alison-chisholm-southport/","offers":[{"@type":"Offer","url":"http://poetrysociety.org.uk/event/1-1-feedback-on-your-poems-alison-chisholm-southport/","price":"50","category":"primary","availability":"LimitedAvailability","validFrom":"2018-02-08T00:00:00+0000"},{"@type":"Offer","url":"http://poetrysociety.org.uk/event/1-1-feedback-on-your-poems-alison-chisholm-southport/","price":"50","category":"primary","availability":"SoldOut","validFrom":"2018-02-08T00:00:00+0000","validThrough":"2018-03-03T00:00:00+0000"},{"@type":"Offer","url":"http://poetrysociety.org.uk/event/1-1-feedback-on-your-poems-alison-chisholm-southport/","price":"50","category":"primary","availability":"SoldOut","validFrom":"2018-02-08T00:00:00+0000","validThrough":"2018-03-03T00:00:00+0000"}],"startDate":"2018-03-03T10:00:00+00:00","endDate":"2018-03-03T13:00:00+00:00","location":{"@type":"Place","name":"Edda Community Arts &#038; Library","description":"","url":"http://poetrysociety.org.uk/venue/edda-community-arts-library/","address":{"@type":"PostalAddress","streetAddress":"Liverpool Road","addressLocality":"Southport ","postalCode":"PR8 3NE"},"telephone":"01704 578 003","sameAs":"edda-arts.co.uk"},"organizer":{"@type":"Person","name":"The Poetry Society","description":"","url":"http://poetrysociety.org.uk/organizer/the-poetry-society/","telephone":"","email":"","sameAs":""}},{"@context":"http://schema.org","@type":"Event","name":"1-1 feedback on your poems, Heidi Williamson &#8211; Skype","description":"&lt;p&gt;This is a wonderful opportunity to discuss your poetry on a one-to-one basis with poet and tutor Heidi Williamson, wherever you live. Heidi runs one-hour sessions via Skype at 10am, 11am, 1pm, 2pm, and 3.30pm. Book online or call Paul McGrane on 020 7420 9881. Once you\u2019ve booked, and a few weeks before the call, [&hellip;]&lt;/p&gt;\\n","image":"http://poetrysociety.org.uk/wp-content/uploads/2016/02/crop-11.jpg","url":"http://poetrysociety.org.uk/event/heidimarch/","offers":[{"@type":"Offer","url":"http://poetrysociety.org.uk/event/heidimarch/","price":"60","category":"primary","availability":"SoldOut","validFrom":"2018-02-02T00:00:00+0000"},{"@type":"Offer","url":"http://poetrysociety.org.uk/event/heidimarch/","price":"60","category":"primary","availability":"SoldOut","validFrom":"2018-02-02T00:00:00+0000","validThrough":"2018-03-17T00:00:00+0000"},{"@type":"Offer","url":"http://poetrysociety.org.uk/event/heidimarch/","price":"60","category":"primary","availability":"LimitedAvailability","validFrom":"2018-02-02T00:00:00+0000","validThrough":"2018-03-17T00:00:00+0000"},{"@type":"Offer","url":"http://poetrysociety.org.uk/event/heidimarch/","price":"60","category":"primary","availability":"LimitedAvailability","validFrom":"2018-02-02T00:00:00+0000","validThrough":"2018-03-17T00:00:00+0000"},{"@type":"Offer","url":"http://poetrysociety.org.uk/event/heidimarch/","price":"60","category":"primary","availability":"SoldOut","validFrom":"2018-02-02T00:00:00+0000","validThrough":"2018-03-17T00:00:00+0000"}],"startDate":"2018-03-17T10:00:00+00:00","endDate":"2018-03-17T17:30:00+00:00","location":{"@type":"Place","name":"SKYPE","description":"","url":"http://poetrysociety.org.uk/venue/skype/","address":{"@type":"PostalAddress"},"telephone":"","sameAs":""},"organizer":{"@type":"Person","name":"The Poetry Society","description":"","url":"http://poetrysociety.org.uk/organizer/the-poetry-society/","telephone":"","email":"","sameAs":""}},{"@context":"http://schema.org","@type":"Event","name":"A Poem to Remember Free Workshop: Portsmouth","description":"&lt;p&gt;&nbsp; A free writing workshop on&nbsp;theme of writing from difficult personal experiences - part of&nbsp;A Poem to Remember. A Poem to Remember is a national initiative launched by Prince William, encouraging people to write poems of hope over adversity to mark the end of the First World War. Maggie Sawkins,&nbsp;Portsmouth-based poet, will lead the session. [&hellip;]&lt;/p&gt;\\n","image":"http://poetrysociety.org.uk/wp-content/uploads/2018/02/adolfo-felix-546626-unsplash.jpg","url":"http://poetrysociety.org.uk/event/a-poem-to-remember-free-workshop-portsmouth/","startDate":"2018-03-24T10:30:00+00:00","endDate":"2018-03-24T13:30:00+00:00","location":{"@type":"Place","name":"Portsmouth Central Library","description":"","url":"http://poetrysociety.org.uk/venue/portsmouth-central-library/","address":{"@type":"PostalAddress","streetAddress":"Portsmouth Central Library,\u00a0Guildhall Walk","addressLocality":"Portsmouth","postalCode":"Portsmouth Central Library,\u00a0Guildhall WalPO1 2DX"},"telephone":"","sameAs":"https://www.portsmouth.gov.uk/ext/libraries/libraries-addresses-and-opening-times"}}]
+</script>							</div> <!-- #tab-workshops -->
+						</div> <!-- .tab-content -->
+					</div> 
+				</div>
+				
+				<div class="row row2">
+
+								
+							<div class="col-sm-4">
+							<a href="http://poetrysociety.org.uk/poetry-society-information/about/support-us/">
+								<div class="wrapper">
+									<img width="600" height="400" src="http://poetrysociety.org.uk/wp-content/uploads/2017/12/LNMO-2009-cat-sleigh-3-x-2.jpg" class="attachment-medium size-medium wp-post-image" alt="" srcset="http://poetrysociety.org.uk/wp-content/uploads/2017/12/LNMO-2009-cat-sleigh-3-x-2.jpg 600w, http://poetrysociety.org.uk/wp-content/uploads/2017/12/LNMO-2009-cat-sleigh-3-x-2-180x120.jpg 180w, http://poetrysociety.org.uk/wp-content/uploads/2017/12/LNMO-2009-cat-sleigh-3-x-2-300x200.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" />									<span class="absolute-title"><span class="title"> Donate to The Poetry Society </span>
+										
+										<br /><span class="subtitle">Help connect people to the power of poetry!</span>
+																		</span>
+								</div>
+							</a>
+						</div>
+								
+							<div class="col-sm-4">
+							<a href="http://poetrysociety.org.uk/poetry-cafe/exhibitions/">
+								<div class="wrapper">
+									<img width="800" height="533" src="http://poetrysociety.org.uk/wp-content/uploads/2018/02/anna_stubberfield_web2x3-800x533.jpg" class="attachment-medium size-medium wp-post-image" alt="" srcset="http://poetrysociety.org.uk/wp-content/uploads/2018/02/anna_stubberfield_web2x3-800x533.jpg 800w, http://poetrysociety.org.uk/wp-content/uploads/2018/02/anna_stubberfield_web2x3-768x512.jpg 768w, http://poetrysociety.org.uk/wp-content/uploads/2018/02/anna_stubberfield_web2x3-1200x800.jpg 1200w, http://poetrysociety.org.uk/wp-content/uploads/2018/02/anna_stubberfield_web2x3-180x120.jpg 180w, http://poetrysociety.org.uk/wp-content/uploads/2018/02/anna_stubberfield_web2x3-300x200.jpg 300w, http://poetrysociety.org.uk/wp-content/uploads/2018/02/anna_stubberfield_web2x3-600x400.jpg 600w, http://poetrysociety.org.uk/wp-content/uploads/2018/02/anna_stubberfield_web2x3.jpg 1424w" sizes="(max-width: 800px) 100vw, 800px" />									<span class="absolute-title"><span class="title"> Poetry Re-viewed exhibition </span>
+										
+										<br /><span class="subtitle">Poetry Café show inspired by the winter Poetry Review</span>
+																		</span>
+								</div>
+							</a>
+						</div>
+								
+							<div class="col-sm-4">
+							<a href="https://poetrysociety.org.uk/event/bricks-made-of-air-poetry-for-architects-architecture-for-poets/">
+								<div class="wrapper">
+									<img width="600" height="400" src="http://poetrysociety.org.uk/wp-content/uploads/2018/02/Bricks-Made-of-Air-promo-600.jpg" class="attachment-medium size-medium wp-post-image" alt="" srcset="http://poetrysociety.org.uk/wp-content/uploads/2018/02/Bricks-Made-of-Air-promo-600.jpg 600w, http://poetrysociety.org.uk/wp-content/uploads/2018/02/Bricks-Made-of-Air-promo-600-180x120.jpg 180w, http://poetrysociety.org.uk/wp-content/uploads/2018/02/Bricks-Made-of-Air-promo-600-300x200.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" />									<span class="absolute-title"><span class="title"> Bricks Made of Air </span>
+										
+										<br /><span class="subtitle">Poetry meets Architecture 28th Feb</span>
+																		</span>
+								</div>
+							</a>
+						</div>
+						
+				</div>
+				
+				<div class="row row3">
+
+					<!-- get the random poems -->
+						
+					
+					<div class="col-sm-4"> 
+						<div class="home-poem-info"> 
+							<h2 class="featured-title">Featured Poem</h2>
+														<p>
+								This poem was published in The Poetry Review, winter issue, 2017.							</p>
+							
+							<div class="align-center">
+								<a href="/poems/">More poetry &#187;</a>
+							</div>
+
+							
+						</div> 
+						<!--<div class="twitter-holder">  
+							 <a class="twitter-timeline" href="https://twitter.com/PoetrySociety" data-widget-id="569858454206955520">Tweets by @PoetrySociety</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+						</div>-->
+						
+					</div>
+							
+					<div class="col-sm-8">
+						<div class="home-poem"> 
+						<header class='entry-header'><h1 class='entry-title'>Salisbury Prison, 31 December 1966</h1><h3>by <a href="http://poetrysociety.org.uk/poets/o-flote">O. Flote</a></h3></header><div class='entry-content'><p><em>extract from </em>My Life as Robert Gabriel Mugabe<em> by Comrade Diogenes Junk</em></p>
+<p>The Settlers can give you your old life back, it is what they deal in – the past.<br />
+They are experts in subverting all other action to this single cause.<br />
+They are witches trading in the spells of the past. A past where they are witches<br />
+and manipulators of everything to their cause and benefit.</p>
+<p>No, Nhamodzenyika, let me tell this to you now so there is no confusion.<br />
+I am not the Settlers’ slave consort. Their magic has no effect upon me,<br />
+riddles me no more. Long ago I gave up the tractable hopes of the naked haggler<br />
+for dignity. I restored my eyes to their purpose which is to see how things really are.</p>
+<p>I am not weak, though I do suffer; I am not broken, though I ache so much,<br />
+so much it’s as if my soul were in fact a body dropped from an aeroplane,<br />
+a body which aches twice: first, during the fall in anticipation of death and thereby<br />
+experiencing death over and over again; and secondly, after the fall</p>
+<p>just before the final death when every broken bone and burst vessel,<br />
+every crack in your skull and jaw sings with the pain your soul has already known.<br />
+This is the dual pain of imprisonment by those who despise you for being<br />
+exactly who you are, who you can only be: the pain of the fall.</p>
+<p>But what the Settlers don’t know, what they cannot begin to understand,<br />
+is that I have every faith in the milliseconds of life I shall gain after I hit the ground<br />
+and shatter, just before I expel my last breath. It is during this tiny window of life<br />
+that I shall rise up and deal an emphatic blow for my people, for our liberation,</p>
+<p>and so destroy the realm of the Settlers for an eternity. I am alive now<br />
+like never before, in that fraction of time just before death. (Thanks to you?)<br />
+And the lust and righteousness budded from this knowledge is what supplies me the strength<br />
+to write to you now, my son, and to endure what I am destined to become.</p>
+</div>						</div>
+					</div> <!-- keyword 'homepage' poem -->
+					
+									</div>
+				
+				<div class="row row4">
+					<div class="col-sm-8 col-sm-push-4 intro-blurb" id="introduction"> 
+									
+						
+						<p><strong>The Poetry Society</strong> was founded in 1909 to promote &#8220;a more general recognition and appreciation of poetry&#8221;.&nbsp; Since then, it has grown into one of Britain&#8217;s most dynamic arts organisations, representing British poetry both nationally and internationally.&nbsp; Today it has more than&nbsp;4000 members worldwide and publishes <em>The Poetry Review</em>.</p>
+<p>With innovative <a title="Education" href="/education/">education</a> and <a title="Projects" href="/projects/">commissioning programmes</a> and a packed calendar of <a href="/events/">performances, readings</a> and <a href="/competitions/">competitions</a>, The Poetry Society champions poetry for all ages.</p>
+<p><a title="About" href="/poetry-society-information/about/">More about the Poetry Society&#8230;</a></p>
+						
+					</div>
+					
+				</div>	
+				<div class="row row5">
+					<div class="col-sm-8 col-sm-push-4" id="tweets">
+					
+<div class='fetch-tweets-box' >
+	<h3 id="tweetheader"><a href="https://twitter.com/PoetrySociety">Tweets @PoetrySociety<a></h3>
+	    <div class='row'>        
+    <div class="col-md-6 fetch-tweets-item-2 fetch-tweets-retweet">
+    	<div class="fetch-tweets-content">
+                <div class='fetch-tweets-profile-image' style="max-width:48px; float:left; clear:left;">
+            <a href='https://twitter.com/POETSorg' target='_blank'>
+                <img src='http://pbs.twimg.com/profile_images/818597091215716353/5ejD1Ojs_normal.jpg' style='max-width:48px; border-radius: 5px;' alt='The profile image of POETSorg' onError='this.onerror=null;this.src="http://pbs.twimg.com/profile_images/818597091215716353/5ejD1Ojs.jpg";' />
+            </a>
+        </div><!-- fetch-tweets-profile-image -->
+                <div class='fetch-tweets-main' >
+            <div class='fetch-tweets-heading'>
+            
+                           
+            
+                                <span class='fetch-tweets-user-name'>
+                    <strong>
+                        <a href='https://twitter.com/POETSorg' target='_blank'>
+                            Poets.org                        </a>
+                    </strong>
+                </span>
+                                
+                                <span class='fetch-tweets-tweet-created-at'>
+                    <a href='https://twitter.com/POETSorg/status/969701382512168960' target='_blank'>
+
+                                                
+                        14 hours ago                    </a>            
+                </span>
+                                
+            </div><!-- fetch-tweets-heading -->
+            <div class='fetch-tweets-body'>
+                <p class='fetch-tweets-text'>"I am saving my life by using my life in the service of what must be done." —Audre Lorde <a href="https://twitter.com/brainpicker" target="_blank" rel="nofollow">@brainpicker</a> <a href='https://www.brainpickings.org/2018/03/01/audre-lorde-a-burst-of-light/' target='_blank' rel='nofollow'>brainpickings.org/2018/03/01/aud…</a>                                        <span class='fetch-tweets-retweet-credit'>Retweeted by<a href='https://twitter.com/PoetrySociety' target='_blank'>
+                            The Poetry Society                        </a>
+                    </span>
+                                    </p><!-- fetch-tweets-text -->
+                                                                                                            <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+                                        <ul class='fetch-tweets-intent-buttons'>
+                        <li class='fetch-tweets-intent-reply'>
+                            <a href='https://twitter.com/intent/tweet?in_reply_to=969863236937019392' rel='nofollow' target='_blank' title='Reply'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/reply_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-retweet'>
+                            <a href='https://twitter.com/intent/retweet?tweet_id=969863236937019392' rel='nofollow' target='_blank' title='Retweet'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/retweet_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-favorite'>
+                            <a href='https://twitter.com/intent/favorite?tweet_id=969863236937019392' rel='nofollow' target='_blank' title='Favorite'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/favorite_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>        
+                    </ul><!-- fetch-tweets-intent-buttons -->
+                            </div><!-- fetch-tweets-body -->
+        </div><!-- fetch-tweets-main -->
+        </div>
+    </div><!-- fetch-tweets-item -->
+            
+    <div class="col-md-6 fetch-tweets-item-2 fetch-tweets-retweet">
+    	<div class="fetch-tweets-content">
+                <div class='fetch-tweets-profile-image' style="max-width:48px; float:left; clear:left;">
+            <a href='https://twitter.com/FarragoPoetry' target='_blank'>
+                <img src='http://pbs.twimg.com/profile_images/703340967122870272/pJwD7GIM_normal.jpg' style='max-width:48px; border-radius: 5px;' alt='The profile image of FarragoPoetry' onError='this.onerror=null;this.src="http://pbs.twimg.com/profile_images/703340967122870272/pJwD7GIM.jpg";' />
+            </a>
+        </div><!-- fetch-tweets-profile-image -->
+                <div class='fetch-tweets-main' >
+            <div class='fetch-tweets-heading'>
+            
+                           
+            
+                                <span class='fetch-tweets-user-name'>
+                    <strong>
+                        <a href='https://twitter.com/FarragoPoetry' target='_blank'>
+                            John Paul O'Neill                        </a>
+                    </strong>
+                </span>
+                                
+                                <span class='fetch-tweets-tweet-created-at'>
+                    <a href='https://twitter.com/FarragoPoetry/status/969746708212146176' target='_blank'>
+
+                                                
+                        11 hours ago                    </a>            
+                </span>
+                                
+            </div><!-- fetch-tweets-heading -->
+            <div class='fetch-tweets-body'>
+                <p class='fetch-tweets-text'>The Farrago Heartbreak(er) SLAM! Next Friday at the <a href="https://twitter.com/PoetrySociety" target="_blank" rel="nofollow">@PoetrySociety</a> Cafe. Open to ANY poet SLAM! with a special prize for the best heartbreak/broken/break up poem of the night. Book a slot by e-mail at <span class="__cf_email__" data-cfemail="fb9d9a89899a9c948b949e8f8982bb829a939494d59894d58e90">[email&#160;protected]</span> Features: <a href="https://twitter.com/eloise_anna" target="_blank" rel="nofollow">@eloise_anna</a> <a href="https://twitter.com/Anna_McCrory" target="_blank" rel="nofollow">@Anna_McCrory</a>  &amp; others tbc.                                         <span class='fetch-tweets-retweet-credit'>Retweeted by<a href='https://twitter.com/PoetrySociety' target='_blank'>
+                            The Poetry Society                        </a>
+                    </span>
+                                    </p><!-- fetch-tweets-text -->
+                                                                                                            <script data-cfasync="false" src="/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+                                        <ul class='fetch-tweets-intent-buttons'>
+                        <li class='fetch-tweets-intent-reply'>
+                            <a href='https://twitter.com/intent/tweet?in_reply_to=969863126660378625' rel='nofollow' target='_blank' title='Reply'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/reply_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-retweet'>
+                            <a href='https://twitter.com/intent/retweet?tweet_id=969863126660378625' rel='nofollow' target='_blank' title='Retweet'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/retweet_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-favorite'>
+                            <a href='https://twitter.com/intent/favorite?tweet_id=969863126660378625' rel='nofollow' target='_blank' title='Favorite'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/favorite_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>        
+                    </ul><!-- fetch-tweets-intent-buttons -->
+                            </div><!-- fetch-tweets-body -->
+        </div><!-- fetch-tweets-main -->
+        </div>
+    </div><!-- fetch-tweets-item -->
+    </div><!--end row--><div class='row'>        
+    <div class="col-md-6 fetch-tweets-item-2 fetch-tweets-retweet">
+    	<div class="fetch-tweets-content">
+                <div class='fetch-tweets-profile-image' style="max-width:48px; float:left; clear:left;">
+            <a href='https://twitter.com/MASieghart' target='_blank'>
+                <img src='http://pbs.twimg.com/profile_images/704283641703211008/RhU8c38J_normal.jpg' style='max-width:48px; border-radius: 5px;' alt='The profile image of MASieghart' onError='this.onerror=null;this.src="http://pbs.twimg.com/profile_images/704283641703211008/RhU8c38J.jpg";' />
+            </a>
+        </div><!-- fetch-tweets-profile-image -->
+                <div class='fetch-tweets-main' >
+            <div class='fetch-tweets-heading'>
+            
+                           
+            
+                                <span class='fetch-tweets-user-name'>
+                    <strong>
+                        <a href='https://twitter.com/MASieghart' target='_blank'>
+                            Mary Ann Sieghart                        </a>
+                    </strong>
+                </span>
+                                
+                                <span class='fetch-tweets-tweet-created-at'>
+                    <a href='https://twitter.com/MASieghart/status/969671775360634880' target='_blank'>
+
+                                                
+                        16 hours ago                    </a>            
+                </span>
+                                
+            </div><!-- fetch-tweets-heading -->
+            <div class='fetch-tweets-body'>
+                <p class='fetch-tweets-text'>Helena Bonham Carter reading ‘Phenomenal Woman’ at The Poetry Pharmacy evening at Intelligence Squared. What a woman! <a href="https://twitter.com/search?q=%23poetrypharmacy&#038;src=hash" target="_blank" rel="nofollow">#poetrypharmacy</a> <a href="https://twitter.com/search?q=%23iq2debate&#038;src=hash" target="_blank" rel="nofollow">#iq2debate</a>                                         <span class='fetch-tweets-retweet-credit'>Retweeted by<a href='https://twitter.com/PoetrySociety' target='_blank'>
+                            The Poetry Society                        </a>
+                    </span>
+                                    </p><!-- fetch-tweets-text -->
+                                                                                                            <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+                                        <ul class='fetch-tweets-intent-buttons'>
+                        <li class='fetch-tweets-intent-reply'>
+                            <a href='https://twitter.com/intent/tweet?in_reply_to=969699390888861696' rel='nofollow' target='_blank' title='Reply'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/reply_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-retweet'>
+                            <a href='https://twitter.com/intent/retweet?tweet_id=969699390888861696' rel='nofollow' target='_blank' title='Retweet'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/retweet_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-favorite'>
+                            <a href='https://twitter.com/intent/favorite?tweet_id=969699390888861696' rel='nofollow' target='_blank' title='Favorite'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/favorite_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>        
+                    </ul><!-- fetch-tweets-intent-buttons -->
+                            </div><!-- fetch-tweets-body -->
+        </div><!-- fetch-tweets-main -->
+        </div>
+    </div><!-- fetch-tweets-item -->
+            
+    <div class="col-md-6 fetch-tweets-item-2 ">
+    	<div class="fetch-tweets-content">
+                <div class='fetch-tweets-profile-image' style="max-width:48px; float:left; clear:left;">
+            <a href='https://twitter.com/PoetrySociety' target='_blank'>
+                <img src='http://pbs.twimg.com/profile_images/969505552542912512/Q6FlMEfW_normal.jpg' style='max-width:48px; border-radius: 5px;' alt='The profile image of PoetrySociety' onError='this.onerror=null;this.src="http://pbs.twimg.com/profile_images/969505552542912512/Q6FlMEfW.jpg";' />
+            </a>
+        </div><!-- fetch-tweets-profile-image -->
+                <div class='fetch-tweets-main' >
+            <div class='fetch-tweets-heading'>
+            
+                           
+            
+                                <span class='fetch-tweets-user-name'>
+                    <strong>
+                        <a href='https://twitter.com/PoetrySociety' target='_blank'>
+                            The Poetry Society                        </a>
+                    </strong>
+                </span>
+                                
+                                <span class='fetch-tweets-tweet-created-at'>
+                    <a href='https://twitter.com/PoetrySociety/status/969624687226564609' target='_blank'>
+
+                                                
+                        19 hours ago                    </a>            
+                </span>
+                                
+            </div><!-- fetch-tweets-heading -->
+            <div class='fetch-tweets-body'>
+                <p class='fetch-tweets-text'>Enjoyed  <a href="https://twitter.com/LuciaDove" target="_blank" rel="nofollow">@LuciaDove</a>'s poem in The Poetry Review? Don't miss Ines Smith-Ballester's art at Poetry Re-Viewed at The Poetry Café, alongside other <a href="https://twitter.com/mdxillustration" target="_blank" rel="nofollow">@mdxillustration</a> students inspired by the Winter edition. Until 16 March: <a href='http://poetrysociety.org.uk/poetry-cafe/exhibitions/' target='_blank' rel='nofollow'>poetrysociety.org.uk/poetry-cafe/ex…</a>                                     </p><!-- fetch-tweets-text -->
+                                    <div class='fetch-tweets-external-media'><blockquote class="wp-embedded-content" data-secret="hl0pQAqxdC"><a href="http://poetrysociety.org.uk/poetry-cafe/exhibitions/">Exhibitions</a></blockquote><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; clip: rect(1px, 1px, 1px, 1px);" src="http://poetrysociety.org.uk/poetry-cafe/exhibitions/embed/#?secret=hl0pQAqxdC" data-secret="hl0pQAqxdC" width="200" height="200" title="&#8220;Exhibitions&#8221; &#8212; The Poetry Society" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></div><div class='fetch-tweets-media'><div class='fetch-tweets-media-photo'><a href='https://twitter.com/PoetrySociety/status/969624687226564609/photo/1' target='_blank'><img src='http://pbs.twimg.com/media/DXTMg3VU0AERWdx.jpg' alt='test Twitter Media - Enjoyed  @LuciaDove&#039;s poem in The Poetry Review? Don&#039;t miss Ines Smith-Ballester&#039;s art at Poetry Re-Viewed at The Poetry Café, alongside other @mdxillustration students inspired by the Winter edition. Until 16 March: https://t.co/kvonRo6ZEh https://t.co/uVJxymihTm' /></a></div><!-- fetch-tweets-media-photo --></div><!-- fetch-tweets-media -->                                                                        <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+                                        <ul class='fetch-tweets-intent-buttons'>
+                        <li class='fetch-tweets-intent-reply'>
+                            <a href='https://twitter.com/intent/tweet?in_reply_to=969624687226564609' rel='nofollow' target='_blank' title='Reply'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/reply_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-retweet'>
+                            <a href='https://twitter.com/intent/retweet?tweet_id=969624687226564609' rel='nofollow' target='_blank' title='Retweet'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/retweet_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-favorite'>
+                            <a href='https://twitter.com/intent/favorite?tweet_id=969624687226564609' rel='nofollow' target='_blank' title='Favorite'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/favorite_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>        
+                    </ul><!-- fetch-tweets-intent-buttons -->
+                            </div><!-- fetch-tweets-body -->
+        </div><!-- fetch-tweets-main -->
+        </div>
+    </div><!-- fetch-tweets-item -->
+    </div><!--end row--><div class='row'>        
+    <div class="col-md-6 fetch-tweets-item-2 fetch-tweets-retweet">
+    	<div class="fetch-tweets-content">
+                <div class='fetch-tweets-profile-image' style="max-width:48px; float:left; clear:left;">
+            <a href='https://twitter.com/R3TheVerb' target='_blank'>
+                <img src='http://pbs.twimg.com/profile_images/908347898156515328/5J3Wf_Pi_normal.jpg' style='max-width:48px; border-radius: 5px;' alt='The profile image of R3TheVerb' onError='this.onerror=null;this.src="http://pbs.twimg.com/profile_images/908347898156515328/5J3Wf_Pi.jpg";' />
+            </a>
+        </div><!-- fetch-tweets-profile-image -->
+                <div class='fetch-tweets-main' >
+            <div class='fetch-tweets-heading'>
+            
+                           
+            
+                                <span class='fetch-tweets-user-name'>
+                    <strong>
+                        <a href='https://twitter.com/R3TheVerb' target='_blank'>
+                            The Verb                        </a>
+                    </strong>
+                </span>
+                                
+                                <span class='fetch-tweets-tweet-created-at'>
+                    <a href='https://twitter.com/R3TheVerb/status/969605607274754049' target='_blank'>
+
+                                                
+                        20 hours ago                    </a>            
+                </span>
+                                
+            </div><!-- fetch-tweets-heading -->
+            <div class='fetch-tweets-body'>
+                <p class='fetch-tweets-text'>Tonight's Verb looks at what 'local' means to us. Ian was joined in the studio by <a href="https://twitter.com/Vanessa_Kisuule" target="_blank" rel="nofollow">@Vanessa_Kisuule</a> <a href="https://twitter.com/holliepoetry" target="_blank" rel="nofollow">@holliepoetry</a> and <a href="https://twitter.com/robdrummond" target="_blank" rel="nofollow">@robdrummond</a>. For some reason <a href="https://twitter.com/IMcMillan" target="_blank" rel="nofollow">@IMcMillan</a> really wanted to be photographed with a tea tray...                                         <span class='fetch-tweets-retweet-credit'>Retweeted by<a href='https://twitter.com/PoetrySociety' target='_blank'>
+                            The Poetry Society                        </a>
+                    </span>
+                                    </p><!-- fetch-tweets-text -->
+                                                                                                            <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+                                        <ul class='fetch-tweets-intent-buttons'>
+                        <li class='fetch-tweets-intent-reply'>
+                            <a href='https://twitter.com/intent/tweet?in_reply_to=969617600069144576' rel='nofollow' target='_blank' title='Reply'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/reply_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-retweet'>
+                            <a href='https://twitter.com/intent/retweet?tweet_id=969617600069144576' rel='nofollow' target='_blank' title='Retweet'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/retweet_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-favorite'>
+                            <a href='https://twitter.com/intent/favorite?tweet_id=969617600069144576' rel='nofollow' target='_blank' title='Favorite'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/favorite_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>        
+                    </ul><!-- fetch-tweets-intent-buttons -->
+                            </div><!-- fetch-tweets-body -->
+        </div><!-- fetch-tweets-main -->
+        </div>
+    </div><!-- fetch-tweets-item -->
+            
+    <div class="col-md-6 fetch-tweets-item-2 fetch-tweets-retweet">
+    	<div class="fetch-tweets-content">
+                <div class='fetch-tweets-profile-image' style="max-width:48px; float:left; clear:left;">
+            <a href='https://twitter.com/TheLondonLib' target='_blank'>
+                <img src='http://pbs.twimg.com/profile_images/1142328307/LL_Entrance__compressed__normal.JPG' style='max-width:48px; border-radius: 5px;' alt='The profile image of TheLondonLib' onError='this.onerror=null;this.src="http://pbs.twimg.com/profile_images/1142328307/LL_Entrance__compressed_.JPG";' />
+            </a>
+        </div><!-- fetch-tweets-profile-image -->
+                <div class='fetch-tweets-main' >
+            <div class='fetch-tweets-heading'>
+            
+                           
+            
+                                <span class='fetch-tweets-user-name'>
+                    <strong>
+                        <a href='https://twitter.com/TheLondonLib' target='_blank'>
+                            The London Library                        </a>
+                    </strong>
+                </span>
+                                
+                                <span class='fetch-tweets-tweet-created-at'>
+                    <a href='https://twitter.com/TheLondonLib/status/969540055760015360' target='_blank'>
+
+                                                
+                        1 day ago                    </a>            
+                </span>
+                                
+            </div><!-- fetch-tweets-heading -->
+            <div class='fetch-tweets-body'>
+                <p class='fetch-tweets-text'>"Over the land freckled with snow half-thawed
+The speculating rooks at their nests cawed
+And saw from elm-tops, delicate as flower of grass,
+What we below could not see, Winter pass."
+
+Hoping for Winter's end soon as we celebrate poet <a href="https://twitter.com/search?q=%23EdwardThomas&#038;src=hash" target="_blank" rel="nofollow">#EdwardThomas</a>, who was born <a href="https://twitter.com/search?q=%23onthisday&#038;src=hash" target="_blank" rel="nofollow">#onthisday</a> 1878                                         <span class='fetch-tweets-retweet-credit'>Retweeted by<a href='https://twitter.com/PoetrySociety' target='_blank'>
+                            The Poetry Society                        </a>
+                    </span>
+                                    </p><!-- fetch-tweets-text -->
+                                                                                                            <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+                                        <ul class='fetch-tweets-intent-buttons'>
+                        <li class='fetch-tweets-intent-reply'>
+                            <a href='https://twitter.com/intent/tweet?in_reply_to=969617301761855489' rel='nofollow' target='_blank' title='Reply'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/reply_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-retweet'>
+                            <a href='https://twitter.com/intent/retweet?tweet_id=969617301761855489' rel='nofollow' target='_blank' title='Retweet'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/retweet_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-favorite'>
+                            <a href='https://twitter.com/intent/favorite?tweet_id=969617301761855489' rel='nofollow' target='_blank' title='Favorite'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/favorite_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>        
+                    </ul><!-- fetch-tweets-intent-buttons -->
+                            </div><!-- fetch-tweets-body -->
+        </div><!-- fetch-tweets-main -->
+        </div>
+    </div><!-- fetch-tweets-item -->
+    </div><!--end row--><div class='row'>        
+    <div class="col-md-6 fetch-tweets-item-2 fetch-tweets-retweet">
+    	<div class="fetch-tweets-content">
+                <div class='fetch-tweets-profile-image' style="max-width:48px; float:left; clear:left;">
+            <a href='https://twitter.com/Year4RiceLane' target='_blank'>
+                <img src='http://pbs.twimg.com/profile_images/924971092019728384/gO4tskdu_normal.jpg' style='max-width:48px; border-radius: 5px;' alt='The profile image of Year4RiceLane' onError='this.onerror=null;this.src="http://pbs.twimg.com/profile_images/924971092019728384/gO4tskdu.jpg";' />
+            </a>
+        </div><!-- fetch-tweets-profile-image -->
+                <div class='fetch-tweets-main' >
+            <div class='fetch-tweets-heading'>
+            
+                           
+            
+                                <span class='fetch-tweets-user-name'>
+                    <strong>
+                        <a href='https://twitter.com/Year4RiceLane' target='_blank'>
+                            Rice Lane Y4                        </a>
+                    </strong>
+                </span>
+                                
+                                <span class='fetch-tweets-tweet-created-at'>
+                    <a href='https://twitter.com/Year4RiceLane/status/969589793427460096' target='_blank'>
+
+                                                
+                        21 hours ago                    </a>            
+                </span>
+                                
+            </div><!-- fetch-tweets-heading -->
+            <div class='fetch-tweets-body'>
+                <p class='fetch-tweets-text'><a href="https://twitter.com/MichaelRosenYes" target="_blank" rel="nofollow">@MichaelRosenYes</a> 4H at rice lane have loved looking at Jelly boots Smelly boots this week. We made our own Imagine poems. The children love watching your YouTube channel now. <a href="https://twitter.com/search?q=%23ricelaneEnglish&#038;src=hash" target="_blank" rel="nofollow">#ricelaneEnglish</a> <a href="https://twitter.com/search?q=%23poetry&#038;src=hash" target="_blank" rel="nofollow">#poetry</a> <a href="https://twitter.com/ricelaneprimary" target="_blank" rel="nofollow">@ricelaneprimary</a>                                         <span class='fetch-tweets-retweet-credit'>Retweeted by<a href='https://twitter.com/PoetrySociety' target='_blank'>
+                            The Poetry Society                        </a>
+                    </span>
+                                    </p><!-- fetch-tweets-text -->
+                                                                                                            <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+                                        <ul class='fetch-tweets-intent-buttons'>
+                        <li class='fetch-tweets-intent-reply'>
+                            <a href='https://twitter.com/intent/tweet?in_reply_to=969617119116709888' rel='nofollow' target='_blank' title='Reply'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/reply_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-retweet'>
+                            <a href='https://twitter.com/intent/retweet?tweet_id=969617119116709888' rel='nofollow' target='_blank' title='Retweet'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/retweet_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-favorite'>
+                            <a href='https://twitter.com/intent/favorite?tweet_id=969617119116709888' rel='nofollow' target='_blank' title='Favorite'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/favorite_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>        
+                    </ul><!-- fetch-tweets-intent-buttons -->
+                            </div><!-- fetch-tweets-body -->
+        </div><!-- fetch-tweets-main -->
+        </div>
+    </div><!-- fetch-tweets-item -->
+            
+    <div class="col-md-6 fetch-tweets-item-2 fetch-tweets-retweet">
+    	<div class="fetch-tweets-content">
+                <div class='fetch-tweets-profile-image' style="max-width:48px; float:left; clear:left;">
+            <a href='https://twitter.com/ByLeavesWeLive' target='_blank'>
+                <img src='http://pbs.twimg.com/profile_images/659783701249699840/AgdjaiFO_normal.jpg' style='max-width:48px; border-radius: 5px;' alt='The profile image of ByLeavesWeLive' onError='this.onerror=null;this.src="http://pbs.twimg.com/profile_images/659783701249699840/AgdjaiFO.jpg";' />
+            </a>
+        </div><!-- fetch-tweets-profile-image -->
+                <div class='fetch-tweets-main' >
+            <div class='fetch-tweets-heading'>
+            
+                           
+            
+                                <span class='fetch-tweets-user-name'>
+                    <strong>
+                        <a href='https://twitter.com/ByLeavesWeLive' target='_blank'>
+                            Scottish Poetry Lib                        </a>
+                    </strong>
+                </span>
+                                
+                                <span class='fetch-tweets-tweet-created-at'>
+                    <a href='https://twitter.com/ByLeavesWeLive/status/969595689939492864' target='_blank'>
+
+                                                
+                        21 hours ago                    </a>            
+                </span>
+                                
+            </div><!-- fetch-tweets-heading -->
+            <div class='fetch-tweets-body'>
+                <p class='fetch-tweets-text'>A reminder - because of the weather, the deadline for the Edwin Morgan Poetry Award had been pushed back to Monday 5, 5pm. Get those entries in, folks. The big time is calling.                                         <span class='fetch-tweets-retweet-credit'>Retweeted by<a href='https://twitter.com/PoetrySociety' target='_blank'>
+                            The Poetry Society                        </a>
+                    </span>
+                                    </p><!-- fetch-tweets-text -->
+                                                                                                            <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+                                        <ul class='fetch-tweets-intent-buttons'>
+                        <li class='fetch-tweets-intent-reply'>
+                            <a href='https://twitter.com/intent/tweet?in_reply_to=969604813360107521' rel='nofollow' target='_blank' title='Reply'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/reply_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-retweet'>
+                            <a href='https://twitter.com/intent/retweet?tweet_id=969604813360107521' rel='nofollow' target='_blank' title='Retweet'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/retweet_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-favorite'>
+                            <a href='https://twitter.com/intent/favorite?tweet_id=969604813360107521' rel='nofollow' target='_blank' title='Favorite'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/favorite_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>        
+                    </ul><!-- fetch-tweets-intent-buttons -->
+                            </div><!-- fetch-tweets-body -->
+        </div><!-- fetch-tweets-main -->
+        </div>
+    </div><!-- fetch-tweets-item -->
+    </div><!--end row--><div class='row'>        
+    <div class="col-md-6 fetch-tweets-item-2 ">
+    	<div class="fetch-tweets-content">
+                <div class='fetch-tweets-profile-image' style="max-width:48px; float:left; clear:left;">
+            <a href='https://twitter.com/PoetrySociety' target='_blank'>
+                <img src='http://pbs.twimg.com/profile_images/969505552542912512/Q6FlMEfW_normal.jpg' style='max-width:48px; border-radius: 5px;' alt='The profile image of PoetrySociety' onError='this.onerror=null;this.src="http://pbs.twimg.com/profile_images/969505552542912512/Q6FlMEfW.jpg";' />
+            </a>
+        </div><!-- fetch-tweets-profile-image -->
+                <div class='fetch-tweets-main' >
+            <div class='fetch-tweets-heading'>
+            
+                           
+            
+                                <span class='fetch-tweets-user-name'>
+                    <strong>
+                        <a href='https://twitter.com/PoetrySociety' target='_blank'>
+                            The Poetry Society                        </a>
+                    </strong>
+                </span>
+                                
+                                <span class='fetch-tweets-tweet-created-at'>
+                    <a href='https://twitter.com/PoetrySociety/status/969603647410753541' target='_blank'>
+
+                                                
+                        21 hours ago                    </a>            
+                </span>
+                                
+            </div><!-- fetch-tweets-heading -->
+            <div class='fetch-tweets-body'>
+                <p class='fetch-tweets-text'>We hope you're as excited as we are to hear Kaveh Akbar, Rachel Long, and Holly Singlehurst read in the Poetry Cafe just two weeks from now - book here: <a href='http://bit.ly/kavehcafe' target='_blank' rel='nofollow'>bit.ly/kavehcafe</a>                                    </p><!-- fetch-tweets-text -->
+                                                                                                            <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+                                        <ul class='fetch-tweets-intent-buttons'>
+                        <li class='fetch-tweets-intent-reply'>
+                            <a href='https://twitter.com/intent/tweet?in_reply_to=969603647410753541' rel='nofollow' target='_blank' title='Reply'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/reply_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-retweet'>
+                            <a href='https://twitter.com/intent/retweet?tweet_id=969603647410753541' rel='nofollow' target='_blank' title='Retweet'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/retweet_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-favorite'>
+                            <a href='https://twitter.com/intent/favorite?tweet_id=969603647410753541' rel='nofollow' target='_blank' title='Favorite'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/favorite_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>        
+                    </ul><!-- fetch-tweets-intent-buttons -->
+                            </div><!-- fetch-tweets-body -->
+        </div><!-- fetch-tweets-main -->
+        </div>
+    </div><!-- fetch-tweets-item -->
+            
+    <div class="col-md-6 fetch-tweets-item-2 fetch-tweets-retweet">
+    	<div class="fetch-tweets-content">
+                <div class='fetch-tweets-profile-image' style="max-width:48px; float:left; clear:left;">
+            <a href='https://twitter.com/PoetryFound' target='_blank'>
+                <img src='http://pbs.twimg.com/profile_images/881630998558982145/1EmQx2pv_normal.jpg' style='max-width:48px; border-radius: 5px;' alt='The profile image of PoetryFound' onError='this.onerror=null;this.src="http://pbs.twimg.com/profile_images/881630998558982145/1EmQx2pv.jpg";' />
+            </a>
+        </div><!-- fetch-tweets-profile-image -->
+                <div class='fetch-tweets-main' >
+            <div class='fetch-tweets-heading'>
+            
+                           
+            
+                                <span class='fetch-tweets-user-name'>
+                    <strong>
+                        <a href='https://twitter.com/PoetryFound' target='_blank'>
+                            Poetry Foundation                        </a>
+                    </strong>
+                </span>
+                                
+                                <span class='fetch-tweets-tweet-created-at'>
+                    <a href='https://twitter.com/PoetryFound/status/969588373395525632' target='_blank'>
+
+                                                
+                        22 hours ago                    </a>            
+                </span>
+                                
+            </div><!-- fetch-tweets-heading -->
+            <div class='fetch-tweets-body'>
+                <p class='fetch-tweets-text'>The art director of <a href="https://twitter.com/poetrymagazine" target="_blank" rel="nofollow">@poetrymagazine</a>, <a href="https://twitter.com/FredSasaki" target="_blank" rel="nofollow">@FredSasaki</a>, and the architect behind the Foundation building, <a href="https://twitter.com/JohnRonanArch" target="_blank" rel="nofollow">@JohnRonanArch</a>, are featured in <a href="https://twitter.com/newcity" target="_blank" rel="nofollow">@newcity</a>'s Design 50! <a href='http://poet.ly/UfXf30iHDnO' target='_blank' rel='nofollow'>poet.ly/UfXf30iHDnO</a>                                        <span class='fetch-tweets-retweet-credit'>Retweeted by<a href='https://twitter.com/PoetrySociety' target='_blank'>
+                            The Poetry Society                        </a>
+                    </span>
+                                    </p><!-- fetch-tweets-text -->
+                                                                                                            <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+                                        <ul class='fetch-tweets-intent-buttons'>
+                        <li class='fetch-tweets-intent-reply'>
+                            <a href='https://twitter.com/intent/tweet?in_reply_to=969594156816437248' rel='nofollow' target='_blank' title='Reply'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/reply_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-retweet'>
+                            <a href='https://twitter.com/intent/retweet?tweet_id=969594156816437248' rel='nofollow' target='_blank' title='Retweet'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/retweet_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>
+                        <li class='fetch-tweets-intent-favorite'>
+                            <a href='https://twitter.com/intent/favorite?tweet_id=969594156816437248' rel='nofollow' target='_blank' title='Favorite'>
+                                                                <span class='fetch-tweets-intent-icon' style='background-image: url("http://poetrysociety.org.uk/wp-content/plugins/fetch-tweets/asset/image/favorite_48x16.png");' ></span>
+                                                                                            </a>
+                        </li>        
+                    </ul><!-- fetch-tweets-intent-buttons -->
+                            </div><!-- fetch-tweets-body -->
+        </div><!-- fetch-tweets-main -->
+        </div>
+    </div><!-- fetch-tweets-item -->
+    </div><!--end row-->    
+</div><!-- fetch-tweets -->					<div class="see-more-tweets">
+						<a href="https://twitter.com/poetrysociety">See more Tweets</a>
+					</div>
+					</div>
+				</div>
+				
+			</div>
+
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+	</div><!-- .container -->
+	<footer id="colophon" class="site-footer footer.php" role="contentinfo">
+		<div class="container">
+			<div class="row">
+			
+			
+				<div class="site-info col-md-10">
+					
+					<div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-2102" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-14 current_page_item menu-item-2102"><a href="http://poetrysociety.org.uk/">Home</a></li>
+<li id="menu-item-17321" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17321"><a href="http://poetrysociety.org.uk/poetry-society-information/search/">Search</a></li>
+<li id="menu-item-2088" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2088"><a href="http://poetrysociety.org.uk/poetry-society-information/about/">About</a></li>
+<li id="menu-item-3190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3190"><a href="http://poetrysociety.org.uk/frequently-asked-questions/">FAQ</a></li>
+<li id="menu-item-7861" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7861"><a href="/poems/">Poems</a></li>
+<li id="menu-item-2092" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2092"><a href="http://poetrysociety.org.uk/poetry-society-information/services/">Services</a></li>
+<li id="menu-item-2100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2100"><a href="http://poetrysociety.org.uk/poetry-society-information/terms-and-conditions/">Terms and conditions</a></li>
+<li id="menu-item-2093" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2093"><a href="http://poetrysociety.org.uk/poetry-society-information/contact-us/">Contact us</a></li>
+<li id="menu-item-8338" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8338"><a href="http://poetrysociety.org.uk/website-accessibility/">Accessibility</a></li>
+<li id="menu-item-11504" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11504"><a href="/poetry-society-information/about/support-us/">Support us</a></li>
+</ul></div>					
+					
+				</div><!-- .site-info -->
+				
+				<div class="accessibility-label col-md-2">
+					<a class="btn btn-default" data-toggle="collapse" href="#accessibility-drawer" aria-expanded="false" aria-controls="accessibility-drawer"><h6>Accessibility options</h6></a>
+				</div>
+				
+				<div class="collapse col-xs-12" id="accessibility-drawer">
+					<div class="well">
+						<span class="wp_user_stylesheet_switcher">Available styles: <button class="wp_user_stylesheet_switcher_button wp_user_stylesheet_switcher_icon_s0_0 wp_user_stylesheet_switcher_active_option" onclick="wp_user_stylesheet_switcher_changeCSS('s0', '0');"><img class="wp_user_stylesheet_switcher_icon" src="http://poetrysociety.org.uk/wp-content/themes/poetry-soc/images/access-screenshot-DEF.jpg"  alt="Default"></button><button class="wp_user_stylesheet_switcher_button wp_user_stylesheet_switcher_icon_s0_1 " onclick="wp_user_stylesheet_switcher_changeCSS('s0', '1');"><img class="wp_user_stylesheet_switcher_icon" src="http://poetrysociety.org.uk/wp-content/themes/poetry-soc/images/access-screenshot-LC.jpg"  alt="Low contrast"></button><button class="wp_user_stylesheet_switcher_button wp_user_stylesheet_switcher_icon_s0_2 " onclick="wp_user_stylesheet_switcher_changeCSS('s0', '2');"><img class="wp_user_stylesheet_switcher_icon" src="http://poetrysociety.org.uk/wp-content/themes/poetry-soc/images/access-screenshot-INV.jpg"  alt="Inverted"></button></span>					</div>
+				</div>
+				
+				<div id="socialmedia" class="col-sm-6">
+					<a href="https://twitter.com/poetrysociety"><img src="/wp-content/themes/poetry-soc/images/icon-twitter-round-white.png"></a>
+					<a href="https://www.facebook.com/thepoetrysociety"><img src="/wp-content/themes/poetry-soc/images/icon-facebook-round-white.png"></a>
+				</div>
+				<div id="logozone" class="col-sm-6">
+	<!--
+					<a href="/projects/poems-on-the-underground/" class="poems-on-the-underground-logo">
+						<img src="/wp-content/uploads/2014/12/poems-on-the-underground-logo.png" alt="Poems on the Underground" />
+					</a>
+	-->
+					<a href="http://artscouncil.org.uk/" class="ace-logo">
+						<img src="/wp-content/uploads/2014/12/arts-council-logo.png" alt="Supported by Arts Council England" />
+					</a>
+				</div>
+				<p class="copyright col-xs-12">&copy; 1909 - 2018 The Poetry Society and respective creators • Site by <a href="http://www.surfaceimpression.digital">Surface Impression</a></p>
+				<span class="cookie-msg col-xs-12">By using this website you imply consent to its use of cookies. <a href="../poetry-society-information/terms-and-conditions/">More information about cookies</a>.</span>
+			</div>
+		</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script type='text/javascript'> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done"}};/* ]]> */ </script><script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/js/navigation.js?ver=20120206'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/js/skip-link-focus-fix.js?ver=20130115'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var related_poems_tags = {"tags":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/themes/poetry-soc/poem_order.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/poetrysociety.org.uk\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View basket","cart_url":"http:\/\/poetrysociety.org.uk\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.js?ver=3.2.6'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.js?ver=2.70'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.js?ver=2.1.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/poetrysociety.org.uk\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.js?ver=3.2.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"http:\/\/poetrysociety.org.uk\/?wc-ajax=%%endpoint%%","fragment_name":"wc_fragments_0f29630608351b92b66648b8d2cc4408"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.js?ver=3.2.6'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/plugins/event-tickets-plus/vendor/jquery.deparam/jquery.deparam.js?ver=4.6.2'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/plugins/event-tickets-plus/vendor/jquery.cookie/jquery.cookie.js?ver=4.6.2'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/plugins/event-tickets-plus/src/resources/js/meta.js?ver=4.6.2'></script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-includes/js/wp-embed.js?ver=4.9.4'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wp_user_stylesheets = {"s0":{"default":0,"0":{"file":"http:\/\/poetrysociety.org.uk\/wp-content\/themes\/poetry-soc\/style.css"},"1":{"file":"http:\/\/poetrysociety.org.uk\/wp-content\/themes\/poetry-soc\/style-lowcontrast.css"},"2":{"file":"http:\/\/poetrysociety.org.uk\/wp-content\/themes\/poetry-soc\/style-inverted.css"}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://poetrysociety.org.uk/wp-content/plugins/wp-user-stylesheet-switcher/js/wp_user_stylesheet_switcher.js?ver=4.9.4'></script>
+<!-- WooCommerce JavaScript -->
+<script type="text/javascript">
+jQuery(function($) { 
+
+					$( '.add_to_cart_button:not(.product_type_variable, .product_type_grouped)' ).click( function() {
+						ga( 'ec:addProduct', {'id': ($(this).data('product_sku')) ? ($(this).data('product_sku')) : ('#' + $(this).data('product_id')),'quantity': $(this).data('quantity')} );
+						ga( 'ec:setAction', 'add' );
+						ga( 'send', 'event', 'UX', 'click', 'add to cart' );
+					});
+				
+
+ga( 'send', 'pageview' ); 
+ });
+</script>
+
+<!--
+<script>
+// keep for now
+$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+    // Avoid following the href location when clicking
+    event.preventDefault(); 
+    // Avoid having the menu to close when clicking
+    event.stopPropagation(); 
+    // Re-add .open to parent sub-menu item
+    $(this).parent().addClass('open');
+    $(this).parent().find("ul").parent().find("li.dropdown").addClass('open');
+});
+</script>
+-->
+
+<!--
+<script>
+$(function(){
+
+$('.navbar .dropdown').hover(function() {
+$(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+
+}, function() {
+$(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp();
+
+});
+</script>
+-->
+
+
+<script>
+;(function($){
+	// Colourful Table of contents
+	var myColors = [
+        '#d3135a', '#72c5c6', '#e51e20',
+		'#79de42', '#31ae73', '#42a7de', 
+		'#4267de', '#ecde00', '#d542de', 
+		'#ffa02f'
+    ];
+    var myDotColors = [
+	    '#d3135a', '#72c5c6', '#e51e20',
+		'#79de42', '#31ae73', '#42a7de', 
+		'#F5E92D', '#d542de', '#ffa02f',
+		'#444444', '#444444', '#444444', 
+		'#1D1E1C', '#1D1E1C', '#1D1E1C'
+    ];
+    colorfy_me = function() {
+        var colors = myColors.slice(0)
+   
+        $('.toc-item .transparent, .membership-all .membership-all-box .inner, .poem-circle').each(function() {
+             // find a random color that's not already used.
+             var color = Math.floor(Math.random() * colors.length);
+             $(this).css('background-color', colors[color]);
+             //$(this).html( colors[color] )
+             //colors = colors.slice(0,color-1).concat( colors.slice(color+1,colors.length-1) )
+             
+        });
+    }
+    colorfy_me_dots = function() {
+        var colors = myDotColors.slice(0)
+   
+        $('.dot').each(function() {
+             // find a random color that's not already used.
+             var color = Math.floor(Math.random() * colors.length);
+             $(this).css('background-color', colors[color]);
+             //$(this).html( colors[color] )
+             //colors = colors.slice(0,color-1).concat( colors.slice(color+1,colors.length-1) )
+             
+        });
+       
+    }
+    $(function(){
+	    colorfy_me();
+	    colorfy_me_dots();
+    });
+   })( jQuery ); 
+</script>
+
+<script>
+;(function($){
+	// Subnav here state		
+	if ($('.subnav-widget').length){
+ 		var url = $(location).attr('href');
+ 		$('.subnav-widget li a[href="' + url + '"]').addClass("here");
+	}
+	
+	// Programmatic lightbox (make selector more specific if causing problems)
+	$(".entry-content a[href$='.jpg'], .entry-content a[href$='.gif'], .entry-content a[href$='.png']").boxer();	
+
+	if($(window).width()>760){
+		$('.membership-featured .membership-featured-box').matchHeight();
+		$('.membership-all .membership-all-box').matchHeight();
+	}
+	
+	// Match heights
+	$('.toc-wrap .toc-item').matchHeight();
+	if($(window).width()>599){
+		$('.match-group-1').matchHeight();
+		$('.home .widget_event_highlights').css('height', '100%');
+	}
+	
+	// force nav with submenu to click through
+	$('#menu-main-nav .dropdown-toggle').click(function(){
+		if(typeof $(this).attr('aria-expanded') == 'undefined' || !$(this).attr('aria-expanded') || $(this).attr('aria-expanded') == 'false'){
+		} 
+		else{
+			location.href = this.href;
+		}
+	});
+	
+	// move sidebar on mobile
+	if($(window).width()<600){
+		$('#left-sidebar').appendTo('#content').css('clear', 'both');
+	}
+	
+	// Events filter radio
+	if($('.events-list').length){
+		/*
+if($('.term-the-poetry-cafe').length){
+			$('.label-cafe input').prop('checked',true);
+		}
+		else if($('.term-the-poetry-society').length){
+			$('.label-society input').prop('checked',true);
+		}
+		else if($('.term-the-stanzas').length){
+			$('.label-stanzas input').prop('checked',true);
+		}
+		else{
+			$('.label-others input').prop('checked',true);
+		}
+*/		
+		
+		if(!$('.events-category').length){
+			//if(window.console){console.log('length'+$('#form-hosts input:checked').length)};	
+			$('#form-hosts #radio2').each(function(){
+				var self = $(this).parent();
+				var selftarget = self.attr('href');
+				var target = '#tribe-events-content';
+				var $target = $(target);
+				
+				$target.toggleClass('loading');
+				
+				//if(window.console){console.log(selftarget)};		
+				//if(window.console){console.log(target)};		
+				
+				$target.load(selftarget + ' ' + target, function(){
+					//if(window.console){console.log("Yep")};
+					$target.toggleClass('loading');
+					$('#form-hosts input').prop('checked',false);
+					self.children('input').prop('checked',true);
+
+					$('select.tribe-bar-views-select').find( 'option[data-view="month"]' ).val( selftarget + 'month/' );
+				});
+			});
+		};
+		
+		$('#form-hosts').on('click', 'a', function( evt ){
+			evt.preventDefault();
+			
+			var self = $(this);
+			var selftarget = self.attr('href');
+			var target = '#tribe-events-content';
+			var $target = $(target);
+			
+			$target.toggleClass('loading');
+			
+			//if(window.console){console.log(selftarget)};		
+			//if(window.console){console.log(target)};		
+			
+			$target.load(selftarget + ' ' + target, function(){
+				//if(window.console){console.log("Yep")};
+				$target.toggleClass('loading');
+				$('#form-hosts input').prop('checked',false);
+				self.children('input').prop('checked',true);
+
+				/**
+				 * DM - 21-07-2017
+				 * 
+				 * Updating the View as select options so that
+				 * 	the month view filters to the currently 
+				 * 	selected filter
+				 */
+				
+				$('select.tribe-bar-views-select').find( 'option[data-view="month"]' ).val( selftarget + 'month/' );
+			});
+	
+			return false;
+			
+		});
+		
+	}
+
+	// Solution for repeating events on calendar
+	(function($) {
+	  $.fn.removeDuplicates = function() {
+	    var original = [];
+	
+	    this.each(function() {
+	      var el = this, $el, isDuplicate;
+	
+	      $.each(original, function() {
+	        $el = $(el);
+	
+	        // check whichever properties 
+	        // you believe determine whether 
+	        // it's a duplicate or not
+	        if (el.className === this.className// && 
+	            //el.id === this.id && 
+	            //el.value === this.value && 
+	            //el.href === this.href && 
+	            //$el.html() === $(this).html()
+	            ) {
+	          isDuplicate = true;
+	          //$el.remove();
+	          $el.addClass('duplicate');
+	        }
+	      });
+	
+	      if (!isDuplicate) {
+	        original.push(el);
+	      }
+	    });
+	  };
+	}(jQuery));
+	
+	
+	$(function(){
+		if($('.events-gridview').length){
+			$('.hentry').removeDuplicates();
+			//if(window.console){console.log("Calendar fix")};
+			
+			$(document).bind("ajaxSuccess", function(){
+				$('.hentry').removeDuplicates();
+			});
+		}
+	});
+	
+})(jQuery);	
+	
+</script>
+
+
+<!-- Just Giving JS -->
+
+<script>(function (d) {var jg = d.createElement('script');jg.type = 'text/javascript';jg.async = true;jg.src = (d.location.protocol == 'https:' ? 'https://widgets.justgiving.com/campaign-summary-card/host.js' :'http://widgets.justgiving.com/campaign-summary-card/host.js');var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(jg, s);})(document);</script>
+
+<script>
+;(function($){
+	$(function(){
+		// group up years in the subnav
+
+		if($("li[data-grouping]").size()>1){
+			$("<li class='group-menu-container'><label for='group-menu'>"+$("li[data-grouping]:first").attr("data-grouping")+"</label><select id='group-menu' ><option value=''>-- Select --</option></select></li>").insertBefore($("li[data-grouping]:first"));
+
+		/*	$("li[data-grouping]").each(function(){
+				$("#group-menu").append("<option value='"+$(this).find("a").attr("href")+"'>"+$(this).text()+"</option>");
+				if($(this).find("a").attr("href")==window.location.href){
+					$("#group-menu option:last").attr("selected","selected");
+				}
+				$(this).remove();
+			});*/
+
+			/*
+			*	rewritten to sort years before appending them to the select
+			*/
+
+			var data = [];
+
+			$('li[data-grouping]').each(function(){
+
+				data.push({ 
+					href : $(this).find('a').attr('href'), 
+					year : parseInt( $(this).text(), 10 ), 
+					elem : $(this) 
+				});
+
+			});
+
+			data.sort( function( a, b ){
+				return b.year - a.year
+			});
+
+			for( var i = 0, len = data.length; i < len; i++ ){
+				$('#group-menu').append( '<option value="' + data[i].href + '" ' + ( data[i].href == window.location.href ? 'selected="selected"' : '' ) + '>' + data[i].year + '</option>'  );
+
+				data[i].elem.remove();
+			}
+
+			var group_menu_change=false;
+			$("#group-menu").on("change",function(){
+				group_menu_change=true;
+				if($(this).val()!=""){
+					window.location.href=$(this).val();
+				}
+				
+			});			
+		}
+		
+		//
+		// $("#ship-to-different-address label").html("Send as a gift / different address");
+		
+		$("#ship-to-different-address label > span").css({ 'margin-left' : '20px' }).html("Send as a gift / different address");
+		$("#ship-to-different-address input[type='checkbox']").css( { 'margin-left' : 0 } );
+		$("#ship-to-different-address label").css( { 'width' : '100%' } );
+
+		$("#order_comments").attr("placeholder","e.g. special notes for delivery, gift message, giftee’s birthday date, giftee’s email/telephone number etc.");
+		//$("<p>e.g. special notes for delivery, gift message, giftee’s birthday date, giftee’s email/telephone number etc</p>").insertAfter("#order_comments");
+		$("label[for='order_comments']").html("Order notes / Gift message");
+		if($(".woocommerce-checkout-review-order-table").size()>0){
+			setInterval(function(){
+			
+				$("tr.fee").each(function(){
+					if($(this).find("th").text()=="Education programme supporter, thank you"){
+						if($(this).find("td").text()=="£0.00"){
+							$(this).find("th").html("Not making a donation at this time");
+							$(this).find("td").html("N/A");
+							$(this).next().find("th:contains('UK taxpayer')").next("td").html("N/A");
+						} 
+					}
+				});
+				$("tr.fee > td:contains('£0.00')").html("Free");
+				$("tr.shipping td").html($("tr.shipping td").html().split("/ year").join(""));
+			},1000);
+		}
+		if($(".create-account").size()>0){
+			$(".create-account > p:first").html("<br />Create an account by entering a username and password below. This will enable you to manage your subscription by <a href='/my-account/'>logging in</a>.<br />Note: if you subscribed before March 2015, you should create a new account, your previous log in details will not work. ");
+		}
+		
+		// move tickets in events
+		 if($(".tribe-events-meta-group-organizer").size()>0){
+		 	$("#event-tickets").insertAfter($(".tribe-events-meta-group-organizer"));
+		 } else if($("#booking_info").size()>0){
+		 	$("#event-tickets").insertAfter($("#booking_info"));
+		 }
+	
+		$(".single-publications .entry-content img:first").parent().boxer();
+		if($(window).width()>768){
+			$("#secondary").prepend($(".single-publications .entry-content img:first").parent());
+			$("#secondary img:first").addClass("publication-image");
+		}
+		
+		// sort out publications nav
+		$(".current-publications-ancestor").addClass("current-menu-ancestor");
+		$(".current-publications-ancestor").parents("li").addClass("current-menu-ancestor");
+					
+		// boxer		
+		$.boxer("defaults", {minWidth:1000,margin:10,top:40});
+		
+		var sidebar_content = $(".page-template-default #secondary").text();
+		if(stringTrim(sidebar_content)==0){
+			$("#primary.col-sm-6").addClass("col-sm-9").removeClass("col-sm-6");
+		}
+
+		// util
+		function stringTrim(x) {
+			return x.replace(/^\s+|\s+$/gm,'');
+		}
+		
+		// faqs
+		$('.single-faq .faq-answer').addClass('collapse');
+		$('.single-faq .faq-question').click(function(){
+			$(this).siblings('.faq-answer').collapse('toggle');
+			$(this).toggleClass('toggle');
+		});
+		
+		$("img.size-full").parent().boxer();
+		
+		/*
+		// poem modal
+		$(".poetrylist a").on("click",function(e){
+			if($(window).width()>600){
+				//alert("go poetry: "+$(this).attr('href'));
+				
+				$("body").append("<div id='boxcontent'>Loading</div>");
+				$("#boxcontent").css("width",($(window).width()*0.9)+'px');
+				$("#boxcontent").load($(this).attr('href')+" #content",function(){
+					$.boxer("resize",{width:$(window).width()*0.9,height:$(window).height()*0.9});
+				});
+				$.boxer($("#boxcontent"));
+				
+				return false;
+			}
+		});	
+		*/
+		// Poem modal
+		$('.poetrylist a').on('click', function(){
+			if($(window).width()>600){
+				if( ! $('#boxcontent').length )
+					$("body").append("<div id='boxcontent'><div class='inner'>Loading</div></div>");
+
+				$("#boxcontent .inner").load($(this).attr('href')+" #content",function( responseTxt, statusTxt, xhr ){
+					$('#boxcontent').find( '#content' ).addClass( 'poetrylist_remodal' );
+				});
+				$("#boxcontent").remodal().open();
+				return false;
+			}
+		});
+
+		//empty modal when close
+
+		$(document).on( 'closed', '.remodal', function( evt ){
+			var self = $(this);
+
+			if( self.find( '.poetrylist_remodal' ) ) self.children( '.inner' ).empty();
+		});
+		
+		
+		// Random position of tweets on home page – only if enough space
+		if ($(window).width()>1000){
+			if($("body.home").size()>0){
+				var tweetIndex = 0;
+					$(".fetch-tweets-content").each(function(){
+						$(this).css('position','relative');
+						if(tweetIndex%2==0){
+							$(this).css('left',(0 - (Math.random()*80))+'px');
+						} else {
+							$(this).css('left',((Math.random()*80))+'px');
+						}
+						tweetIndex++;
+				});	
+			}
+			var scatterIndex = 0;
+			if($(".scatter li").size()>0){
+				$(".scatter li").each(function(){
+					$(this).css('position','relative');
+							if(tweetIndex%2==0){
+								$(this).find("a").css('margin-left',(0 - (Math.random()*180))+'px');
+							} else {
+								$(this).find("a").css('margin-left',((Math.random()*180))+'px');
+							}
+							scatterIndex++;
+				});
+				$("iframe").insertAfter($(".scatter li").eq(1));
+			}
+		}
+	});
+	
+	$(window).on("load", function(){
+		// background
+		setTimeout(function(){
+			if($("body.home").size()>0){
+				$("#circles").height($(document).height());
+				var totalCircles = 50;
+				var spanX = $(document).width() * 1.1;
+				var spanY = ($(document).height() - $("#colophon").height())-150;
+				var store = [];
+				var avoid = ["#tweetheader",".row-1",".home-poem",".home-poem-info","#introduction","#masthead","#breadcrumbs", ".row > div"];
+				var dotsize = 90;
+				var margin = 40;
+				var i;
+				while(totalCircles>0){
+		
+					var available=true;
+					var x = (Math.random()*spanX)-50;
+					var y = (Math.random()*spanY)+200;
+					for(j=0;j<avoid.length;j++){
+						var dont = avoid[j];
+						
+						if((x+margin) > $(dont).offset().left && (x-margin) < ($(dont).offset().left+$(dont).width()) && (y+margin) > $(dont).offset().top && (y-margin) < ($(dont).offset().top+$(dont).height())){
+							available = false;
+							break;
+						}
+					}
+					for(point in store){
+						if(Math.abs(point.x-x) < dotsize && Math.abs(point.y-y) < dotsize) {
+							available = false;
+							break;
+						}
+					}
+					
+					if(available){
+						$("#circles").append("<span class='dot'></span>");		
+						$(".dot:last").css("left",x+'px');
+						$(".dot:last").css("top",y+'px');
+						store.push({x:x,y:y});		
+						totalCircles--;
+						//$(".dot:last").html(totalCircles);
+					}
+					
+					// double check
+					for(point in store){
+						if(Math.abs(x-point.x) < (dotsize+margin) && Math.abs(y-point.y) < (dotsize+margin)) {
+							$(".dot:last").css("border","2px solid black");
+						}
+					}	
+				}
+				colorfy_me_dots();
+				
+			}
+			
+		},750);	
+	});
+})( jQuery );	
+</script>
+
+<script>
+;(function($){
+$(function(){	
+	// Turns widgets into drop-downs
+	if ($('aside.widget.drop-down').length){
+			var $i = 1;
+		$('aside.widget.drop-down').each(function(){
+			var $ddwidget = $(this);
+			var $ddtitle = $(this).find('h1.widget-title');
+			var $ddlist = $(this).find('.w4pl, .events-wrap');
+			$ddtitle.attr({
+				'data-toggle': 'collapse',
+				'data-target': '#dd'+$i
+			}).addClass('collapsed');			
+			$ddlist.attr({
+				'id': 'dd'+$i++,
+			}).addClass('collapse');
+			$ddtitle.append("<button class='btn btn-default event-search-toggle' type='button'><span class='glyphicon glyphicon-chevron-down' aria-hidden='true'></span><span class='glyphicon glyphicon-chevron-up' aria-hidden='true'></span></button>");
+		});
+	}
+});
+  $(function(){
+  
+  	// remove duplicate headers when woocommerce is embedded into the page by shortcode
+  	if($(".single .entry-header .entry-title").text().toLowerCase() == $(".entry-content .woocommerce .product_title").text().toLowerCase()){
+  		$(".entry-content .woocommerce .product_title").remove();
+  	}
+  	if($(".page .entry-header .entry-title").text().toLowerCase() == $(".entry-content .woocommerce .product_title").text().toLowerCase()){
+  		$(".entry-content .woocommerce .product_title").remove();
+  	}
+  	
+  	// compact up long lists of poems by year
+  	if($("#poem-drop-down").size()>0){
+  	$("#poem-drop-down").append("<label>Choose a year: </label> <select id='poem-year'></select>");
+  	var years = [];
+  	$(".poetrylist li").each(function(){
+  		var thisYear = $(this).attr('data-year');
+  		var skip = false;
+  		for(var i=0;i<years.length;i++){
+  			if(years[i]==thisYear || thisYear=="" || years[i] == ''){
+  				skip = true;
+  			}
+  		}
+  		if(!skip){
+  			years.push(thisYear);
+  			
+  		}
+  	});
+  	years.sort();
+  	years.reverse();
+
+  	if( years.length > 1 ){ //no point having a year control if only 1 year to switch between.  Also, was appearing empty when there was no data
+  		for(j=0;j<years.length;j++){
+  			$("#poem-year").append("<option>"+years[j]+"</option>");
+  		}
+  	} else {
+  		$('#poem-drop-down').remove();
+  	}
+
+     $("#poem-year").on("change",function(){
+          $(".poetrylist li").hide();
+          $(".poetrylist li[data-year='"+$("#poem-year").val()+"']").show();
+
+     });
+
+     if( years.length > 1 )
+     	$(".poetrylist li").hide();
+     
+     var year = new Date().getFullYear();
+    	$("#poem-year").change();
+    }
+   });
+   $(function(){
+	  if ($('.page-id-1710').length){
+		  $('#main > .col-sm-9').prependTo('#main');
+		  $('#main > .col-sm-9, #main > .col-sm-3').attr('class','col-sm-12');
+	  }
+	  if ($('.parent-pageid-2399, .parent-pageid-2404, .parent-pageid-2406, .parent-pageid-2408, .page-id-2399, .page-id-2404, .page-id-2406, .page-id-2408').length){
+		  if($(window).width()>599){
+		  	//if(window.console){console.log("yes");}
+		  	$('#left-sidebar, #primary').attr('class','col-sm-12 layouthack').css('clear', 'both');  
+		  }
+	  }
+	 $('#wc_checkout_add_ons_4_field').append("<p id='giftaidtoggle'>Show gift aid agreement...</p>");
+   	  $("#giftaidtoggle").on("click",function(){
+   	  	$('#wc_checkout_add_ons_4_field').append("<p class='giftaid'> I am a UK taxpayer and I agree to The Poetry Society claiming tax on all past, present and future donations I make to the charity. Please treat my donations as Gift Aid donations. I confirm that I am paying or will pay an amount of Income Tax and/or Capital Gains Tax to cover the amount The Poetry Society and any other charities or Community Amateur Sports Clubs (CASCs) will reclaim for the tax year (6 April one year to 5 April the next year). Council Tax and VAT do not qualify towards Gift Aid. The Poetry Society will reclaim 25 pence of tax for every £1 that has been given.</p>"); 	 
+   	  	$(this).remove();
+   	  });
+   	  
+   	  $("#wc_checkout_add_ons_5_field,#wc_checkout_add_ons_6_field, .input-file-plupload").hide();	
+   	  $(".woocommerce-checkout-review-order-table .product-name").each(function(){
+   	  	if($(this).text().toLowerCase().indexOf("poetry prescription")!=-1){
+   	  		 $("#wc_checkout_add_ons_5_field,#wc_checkout_add_ons_6_field, .input-file-plupload").show(); 
+   	  		 $("#wc_checkout_add_ons_5_field").prepend("<span>Please upload your files for your Poetry Prescription.</span>");
+   	  		 $("#wc_checkout_add_ons_5_field,#wc_checkout_add_ons_6_field, .input-file-plupload").wrapAll("<div class='panel panel-default' ><div class='panel-body' /></div>");
+   	  		 $("#checkout").on("submit",function(){
+   	  		 	if($("#wc_checkout_add_ons_5_field .preview .file").text().length==0 || $("#wc_checkout_add_ons_5_field .preview .file").text().length==0){
+   	  		 		alert("Please remember to upload your Poetry Prescription files");
+   	  		 		window.reload();
+   	  		 		return false;
+   	  		 	}
+   	  		 });
+   	  	}
+   	  });  
+   });
+  })( jQuery ); 
+</script>
+
+<script>
+;(function($){
+	$(function(){
+		if ( $('body.pagefright').size()>0 ){
+			$("h1.widget-title").replaceText( /\bIn\b/gi, '<a href="/education/page-fright/">Page Fright</a> –' );
+			$(".entry-content a[title]").tooltip();
+		}
+		if ($('.wp_user_stylesheet_switcher').length){
+			$('.wp_user_stylesheet_switcher_icon').each(function(){
+				var $alt = $(this).prop('alt');
+				//if(window.console){console.log('foo'+$alt)};
+				$("<span style='display:block'>"+$alt+"</span>").insertAfter($(this));
+			});
+		}	
+	});
+})( jQuery );
+
+</script>
+
+</body>
+</html>	
